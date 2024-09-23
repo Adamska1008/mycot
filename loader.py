@@ -32,7 +32,7 @@ class Problem(ABC, BaseModel):
 T = TypeVar("T", bound=Problem)
 
 
-def load_json(file_path: str, model: Type[T]) -> list[T]:
+def load_json(file_path: str, model: Type[T], length_limit: int = None) -> list[T]:
     """
     Load a file which is a large json array and return a list of model instances.
 
@@ -60,6 +60,8 @@ def load_json(file_path: str, model: Type[T]) -> list[T]:
         except json.JSONDecodeError as e:
             print(f"Error reading json file: {e}")
 
+    if length_limit:
+        return data_list[:length_limit]
     return data_list
 
 
@@ -86,7 +88,7 @@ class GSM8K(Problem):
     """
 
     question: str
-    _answer: str = Field(alias="answers")
+    _answer: str = Field(alias="answer")
 
     def problem(self) -> str:
         return self.question

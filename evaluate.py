@@ -21,11 +21,11 @@ def number_equal(lhs: str, rhs: str) -> bool:
         return False
 
 
-def evaluate(file_path: str, model: Type[T]):
+def evaluate(file_path: str, model: Type[T], length_limit: int = None):
     """
     Evaluate the accuracy of AddSub Dataset
     """
-    dataset: list[Problem] = load_json(file_path, model)
+    dataset = load_json(file_path, model, length_limit)
     tot_cnt = len(dataset)
     ps_solver = PSCoTSolver()
     ps_correct_cnt = 0
@@ -66,9 +66,9 @@ def evaluate_add_sub(file_path: str):
 
 def evaluate_gsm8k(file_path: str):
     """Evaluate GSM8K Dataset"""
-    evaluate(file_path, GSM8K)
+    evaluate(file_path, GSM8K, 300)
 
 
 if __name__ == "__main__":
     logger.add("output.log", level="INFO")
-    evaluate_add_sub("./dataset/AddSub.json")
+    evaluate_gsm8k("./dataset/gsm8k.json")

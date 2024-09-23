@@ -16,3 +16,7 @@ conda activate mycot
 ## Run
 
 Run `evaluate.py` will create a logfile and shows the comparison of two solver on *AddSub* Dataset.
+
+## TODOS
+
+The accuracy seems all too high with OpenAI API. Try use ollama instead.
