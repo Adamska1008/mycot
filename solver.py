@@ -19,7 +19,7 @@ def extract_numerical_answer(solve_fn):
     def wrapper(self, *args, **kwargs):
         solve_fn(self, *args, **kwargs)
         assert self.agent is not None, "use extract wrapper on a class without agent"
-        return self.agent.post_human("Therefore the answer is? output only a number")
+        return self.agent.post_human("Therefore the answer is? output only a number.")
 
     return wrapper
 
