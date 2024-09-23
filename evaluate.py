@@ -2,9 +2,12 @@
 Doing evaluate stuff
 """
 
+from typing import Type, TypeVar
 from loguru import logger
-from loader import load_json, AddSub
+from loader import load_json, Problem, AddSub, GSM8K
 from solver import PSCoTSolver, ZSCoTSolver
+
+T = TypeVar("T", bound=Problem)
 
 
 def number_equal(lhs: str, rhs: str) -> bool:
@@ -18,11 +21,11 @@ def number_equal(lhs: str, rhs: str) -> bool:
         return False
 
 
-def evaluate_add_sub(file_path: str):
+def evaluate(file_path: str, model: Type[T]):
     """
     Evaluate the accuracy of AddSub Dataset
     """
-    dataset = load_json(file_path, AddSub)
+    dataset: list[Problem] = load_json(file_path, model)
     tot_cnt = len(dataset)
     ps_solver = PSCoTSolver()
     ps_correct_cnt = 0
@@ -54,6 +57,16 @@ def evaluate_add_sub(file_path: str):
 
     logger.info(f"PS Solver accuracy: {ps_correct_cnt / tot_cnt}")
     logger.info(f"ZS Solver accuracy: {zs_correct_cnt / tot_cnt}")
+
+
+def evaluate_add_sub(file_path: str):
+    """Evaluate AddSub Dataset"""
+    evaluate(file_path, AddSub)
+
+
+def evaluate_gsm8k(file_path: str):
+    """Evaluate GSM8K Dataset"""
+    evaluate(file_path, GSM8K)
 
 
 if __name__ == "__main__":

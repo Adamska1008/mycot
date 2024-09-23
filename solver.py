@@ -20,8 +20,8 @@ def extract_numerical_answer(solve_fn):
         solve_fn(self, *args, **kwargs)
         assert self.agent is not None, "use extract wrapper on a class without agent"
         return self.agent.post_human(
-            "Therefore the answer is? "
-            "output only a real number(e.g., 3.14) and do not use fractional form(like 1/2 or 3/4)."
+            "Therefore the answer is?"
+            "Output only a real number(e.g., 3.14) and do not use fractional form(like 1/2 or 3/4)."
             "If your answer is a repeating decimal, round it to six decimal places."
         )
 

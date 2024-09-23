@@ -1,0 +1,173 @@
+2024-09-23 22:48:56.258 | INFO     | __main__:evaluate_add_sub:32 - Running on 1 case... total 395
+2024-09-23 22:49:23.248 | INFO     | __main__:evaluate_add_sub:51 - On 1 case, PS correct 1 and ZS correct 1.
+2024-09-23 22:49:23.249 | INFO     | __main__:evaluate_add_sub:32 - Running on 2 case... total 395
+2024-09-23 22:49:45.107 | INFO     | __main__:evaluate_add_sub:51 - On 2 case, PS correct 2 and ZS correct 2.
+2024-09-23 22:49:45.107 | INFO     | __main__:evaluate_add_sub:32 - Running on 3 case... total 395
+2024-09-23 22:50:11.868 | INFO     | __main__:evaluate_add_sub:51 - On 3 case, PS correct 3 and ZS correct 3.
+2024-09-23 22:50:11.868 | INFO     | __main__:evaluate_add_sub:32 - Running on 4 case... total 395
+2024-09-23 22:50:31.241 | INFO     | __main__:evaluate_add_sub:51 - On 4 case, PS correct 4 and ZS correct 4.
+2024-09-23 22:50:31.242 | INFO     | __main__:evaluate_add_sub:32 - Running on 5 case... total 395
+2024-09-23 22:50:40.377 | INFO     | __main__:evaluate_add_sub:51 - On 5 case, PS correct 5 and ZS correct 5.
+2024-09-23 22:50:40.377 | INFO     | __main__:evaluate_add_sub:32 - Running on 6 case... total 395
+2024-09-23 22:50:55.140 | INFO     | __main__:evaluate_add_sub:51 - On 6 case, PS correct 6 and ZS correct 6.
+2024-09-23 22:50:55.141 | INFO     | __main__:evaluate_add_sub:32 - Running on 7 case... total 395
+2024-09-23 22:51:06.852 | INFO     | __main__:evaluate_add_sub:51 - On 7 case, PS correct 7 and ZS correct 7.
+2024-09-23 22:51:06.852 | INFO     | __main__:evaluate_add_sub:32 - Running on 8 case... total 395
+2024-09-23 22:51:22.411 | INFO     | __main__:evaluate_add_sub:51 - On 8 case, PS correct 8 and ZS correct 8.
+2024-09-23 22:51:22.411 | INFO     | __main__:evaluate_add_sub:32 - Running on 9 case... total 395
+2024-09-23 22:51:31.961 | INFO     | __main__:evaluate_add_sub:51 - On 9 case, PS correct 9 and ZS correct 9.
+2024-09-23 22:51:31.962 | INFO     | __main__:evaluate_add_sub:32 - Running on 10 case... total 395
+2024-09-23 22:52:00.425 | INFO     | __main__:evaluate_add_sub:51 - On 10 case, PS correct 10 and ZS correct 10.
+2024-09-23 22:52:00.425 | INFO     | __main__:evaluate_add_sub:32 - Running on 11 case... total 395
+2024-09-23 22:52:16.412 | INFO     | __main__:evaluate_add_sub:51 - On 11 case, PS correct 11 and ZS correct 11.
+2024-09-23 22:52:16.412 | INFO     | __main__:evaluate_add_sub:32 - Running on 12 case... total 395
+2024-09-23 22:52:33.703 | INFO     | __main__:evaluate_add_sub:51 - On 12 case, PS correct 12 and ZS correct 12.
+2024-09-23 22:52:33.704 | INFO     | __main__:evaluate_add_sub:32 - Running on 13 case... total 395
+2024-09-23 22:52:41.377 | INFO     | __main__:evaluate_add_sub:51 - On 13 case, PS correct 13 and ZS correct 13.
+2024-09-23 22:52:41.378 | INFO     | __main__:evaluate_add_sub:32 - Running on 14 case... total 395
+2024-09-23 22:53:02.013 | INFO     | __main__:evaluate_add_sub:51 - On 14 case, PS correct 14 and ZS correct 14.
+2024-09-23 22:53:02.013 | INFO     | __main__:evaluate_add_sub:32 - Running on 15 case... total 395
+2024-09-23 22:53:09.397 | INFO     | __main__:evaluate_add_sub:51 - On 15 case, PS correct 15 and ZS correct 15.
+2024-09-23 22:53:09.397 | INFO     | __main__:evaluate_add_sub:32 - Running on 16 case... total 395
+2024-09-23 22:53:43.090 | INFO     | __main__:evaluate_add_sub:51 - On 16 case, PS correct 16 and ZS correct 16.
+2024-09-23 22:53:43.090 | INFO     | __main__:evaluate_add_sub:32 - Running on 17 case... total 395
+2024-09-23 22:54:18.075 | INFO     | __main__:evaluate_add_sub:51 - On 17 case, PS correct 17 and ZS correct 17.
+2024-09-23 22:54:18.075 | INFO     | __main__:evaluate_add_sub:32 - Running on 18 case... total 395
+2024-09-23 22:54:26.664 | INFO     | __main__:evaluate_add_sub:51 - On 18 case, PS correct 18 and ZS correct 18.
+2024-09-23 22:54:26.665 | INFO     | __main__:evaluate_add_sub:32 - Running on 19 case... total 395
+2024-09-23 22:54:36.943 | INFO     | __main__:evaluate_add_sub:51 - On 19 case, PS correct 19 and ZS correct 19.
+2024-09-23 22:54:36.943 | INFO     | __main__:evaluate_add_sub:32 - Running on 20 case... total 395
+2024-09-23 22:55:06.784 | INFO     | __main__:evaluate_add_sub:51 - On 20 case, PS correct 20 and ZS correct 20.
+2024-09-23 22:55:06.784 | INFO     | __main__:evaluate_add_sub:32 - Running on 21 case... total 395
+2024-09-23 22:55:17.617 | INFO     | __main__:evaluate_add_sub:51 - On 21 case, PS correct 21 and ZS correct 21.
+2024-09-23 22:55:17.617 | INFO     | __main__:evaluate_add_sub:32 - Running on 22 case... total 395
+2024-09-23 22:55:28.160 | INFO     | __main__:evaluate_add_sub:51 - On 22 case, PS correct 22 and ZS correct 22.
+2024-09-23 22:55:28.160 | INFO     | __main__:evaluate_add_sub:32 - Running on 23 case... total 395
+2024-09-23 22:55:35.340 | INFO     | __main__:evaluate_add_sub:51 - On 23 case, PS correct 23 and ZS correct 23.
+2024-09-23 22:55:35.341 | INFO     | __main__:evaluate_add_sub:32 - Running on 24 case... total 395
+2024-09-23 22:55:48.311 | INFO     | __main__:evaluate_add_sub:51 - On 24 case, PS correct 24 and ZS correct 24.
+2024-09-23 22:55:48.311 | INFO     | __main__:evaluate_add_sub:32 - Running on 25 case... total 395
+2024-09-23 22:55:57.601 | INFO     | __main__:evaluate_add_sub:51 - On 25 case, PS correct 25 and ZS correct 25.
+2024-09-23 22:55:57.601 | INFO     | __main__:evaluate_add_sub:32 - Running on 26 case... total 395
+2024-09-23 22:56:05.670 | INFO     | __main__:evaluate_add_sub:51 - On 26 case, PS correct 26 and ZS correct 26.
+2024-09-23 22:56:05.670 | INFO     | __main__:evaluate_add_sub:32 - Running on 27 case... total 395
+2024-09-23 22:56:13.012 | INFO     | __main__:evaluate_add_sub:51 - On 27 case, PS correct 27 and ZS correct 27.
+2024-09-23 22:56:13.012 | INFO     | __main__:evaluate_add_sub:32 - Running on 28 case... total 395
+2024-09-23 22:56:21.074 | INFO     | __main__:evaluate_add_sub:51 - On 28 case, PS correct 28 and ZS correct 28.
+2024-09-23 22:56:21.074 | INFO     | __main__:evaluate_add_sub:32 - Running on 29 case... total 395
+2024-09-23 22:56:30.106 | INFO     | __main__:evaluate_add_sub:51 - On 29 case, PS correct 29 and ZS correct 29.
+2024-09-23 22:56:30.106 | INFO     | __main__:evaluate_add_sub:32 - Running on 30 case... total 395
+2024-09-23 22:56:37.881 | INFO     | __main__:evaluate_add_sub:51 - On 30 case, PS correct 30 and ZS correct 30.
+2024-09-23 22:56:37.882 | INFO     | __main__:evaluate_add_sub:32 - Running on 31 case... total 395
+2024-09-23 22:56:43.304 | INFO     | __main__:evaluate_add_sub:51 - On 31 case, PS correct 31 and ZS correct 31.
+2024-09-23 22:56:43.305 | INFO     | __main__:evaluate_add_sub:32 - Running on 32 case... total 395
+2024-09-23 22:56:49.964 | INFO     | __main__:evaluate_add_sub:51 - On 32 case, PS correct 32 and ZS correct 32.
+2024-09-23 22:56:49.964 | INFO     | __main__:evaluate_add_sub:32 - Running on 33 case... total 395
+2024-09-23 22:56:56.194 | INFO     | __main__:evaluate_add_sub:51 - On 33 case, PS correct 33 and ZS correct 33.
+2024-09-23 22:56:56.194 | INFO     | __main__:evaluate_add_sub:32 - Running on 34 case... total 395
+2024-09-23 22:57:02.507 | INFO     | __main__:evaluate_add_sub:51 - On 34 case, PS correct 34 and ZS correct 34.
+2024-09-23 22:57:02.507 | INFO     | __main__:evaluate_add_sub:32 - Running on 35 case... total 395
+2024-09-23 22:57:09.126 | INFO     | __main__:evaluate_add_sub:51 - On 35 case, PS correct 35 and ZS correct 35.
+2024-09-23 22:57:09.127 | INFO     | __main__:evaluate_add_sub:32 - Running on 36 case... total 395
+2024-09-23 22:57:18.379 | INFO     | __main__:evaluate_add_sub:51 - On 36 case, PS correct 36 and ZS correct 36.
+2024-09-23 22:57:18.379 | INFO     | __main__:evaluate_add_sub:32 - Running on 37 case... total 395
+2024-09-23 22:57:26.441 | INFO     | __main__:evaluate_add_sub:51 - On 37 case, PS correct 37 and ZS correct 37.
+2024-09-23 22:57:26.441 | INFO     | __main__:evaluate_add_sub:32 - Running on 38 case... total 395
+2024-09-23 22:57:31.939 | INFO     | __main__:evaluate_add_sub:51 - On 38 case, PS correct 38 and ZS correct 38.
+2024-09-23 22:57:31.939 | INFO     | __main__:evaluate_add_sub:32 - Running on 39 case... total 395
+2024-09-23 22:57:40.333 | INFO     | __main__:evaluate_add_sub:51 - On 39 case, PS correct 39 and ZS correct 39.
+2024-09-23 22:57:40.333 | INFO     | __main__:evaluate_add_sub:32 - Running on 40 case... total 395
+2024-09-23 22:57:49.437 | INFO     | __main__:evaluate_add_sub:51 - On 40 case, PS correct 40 and ZS correct 40.
+2024-09-23 22:57:49.437 | INFO     | __main__:evaluate_add_sub:32 - Running on 41 case... total 395
+2024-09-23 22:57:55.674 | INFO     | __main__:evaluate_add_sub:51 - On 41 case, PS correct 41 and ZS correct 41.
+2024-09-23 22:57:55.675 | INFO     | __main__:evaluate_add_sub:32 - Running on 42 case... total 395
+2024-09-23 22:58:02.712 | INFO     | __main__:evaluate_add_sub:51 - On 42 case, PS correct 42 and ZS correct 42.
+2024-09-23 22:58:02.713 | INFO     | __main__:evaluate_add_sub:32 - Running on 43 case... total 395
+2024-09-23 22:58:09.298 | INFO     | __main__:evaluate_add_sub:51 - On 43 case, PS correct 43 and ZS correct 43.
+2024-09-23 22:58:09.299 | INFO     | __main__:evaluate_add_sub:32 - Running on 44 case... total 395
+2024-09-23 22:58:15.178 | INFO     | __main__:evaluate_add_sub:51 - On 44 case, PS correct 44 and ZS correct 44.
+2024-09-23 22:58:15.178 | INFO     | __main__:evaluate_add_sub:32 - Running on 45 case... total 395
+2024-09-23 22:58:25.437 | INFO     | __main__:evaluate_add_sub:51 - On 45 case, PS correct 45 and ZS correct 45.
+2024-09-23 22:58:25.437 | INFO     | __main__:evaluate_add_sub:32 - Running on 46 case... total 395
+2024-09-23 22:58:33.166 | INFO     | __main__:evaluate_add_sub:51 - On 46 case, PS correct 46 and ZS correct 46.
+2024-09-23 22:58:33.166 | INFO     | __main__:evaluate_add_sub:32 - Running on 47 case... total 395
+2024-09-23 22:58:38.433 | INFO     | __main__:evaluate_add_sub:51 - On 47 case, PS correct 47 and ZS correct 47.
+2024-09-23 22:58:38.433 | INFO     | __main__:evaluate_add_sub:32 - Running on 48 case... total 395
+2024-09-23 22:58:48.496 | INFO     | __main__:evaluate_add_sub:51 - On 48 case, PS correct 48 and ZS correct 48.
+2024-09-23 22:58:48.496 | INFO     | __main__:evaluate_add_sub:32 - Running on 49 case... total 395
+2024-09-23 22:58:55.176 | INFO     | __main__:evaluate_add_sub:51 - On 49 case, PS correct 49 and ZS correct 49.
+2024-09-23 22:58:55.176 | INFO     | __main__:evaluate_add_sub:32 - Running on 50 case... total 395
+2024-09-23 22:59:07.147 | INFO     | __main__:evaluate_add_sub:51 - On 50 case, PS correct 50 and ZS correct 50.
+2024-09-23 22:59:07.147 | INFO     | __main__:evaluate_add_sub:32 - Running on 51 case... total 395
+2024-09-23 22:59:15.668 | INFO     | __main__:evaluate_add_sub:51 - On 51 case, PS correct 51 and ZS correct 51.
+2024-09-23 22:59:15.669 | INFO     | __main__:evaluate_add_sub:32 - Running on 52 case... total 395
+2024-09-23 22:59:23.908 | INFO     | __main__:evaluate_add_sub:51 - On 52 case, PS correct 52 and ZS correct 52.
+2024-09-23 22:59:23.908 | INFO     | __main__:evaluate_add_sub:32 - Running on 53 case... total 395
+2024-09-23 22:59:32.282 | INFO     | __main__:evaluate_add_sub:51 - On 53 case, PS correct 53 and ZS correct 53.
+2024-09-23 22:59:32.282 | INFO     | __main__:evaluate_add_sub:32 - Running on 54 case... total 395
+2024-09-23 22:59:41.328 | INFO     | __main__:evaluate_add_sub:51 - On 54 case, PS correct 54 and ZS correct 54.
+2024-09-23 22:59:41.328 | INFO     | __main__:evaluate_add_sub:32 - Running on 55 case... total 395
+2024-09-23 22:59:51.955 | INFO     | __main__:evaluate_add_sub:51 - On 55 case, PS correct 55 and ZS correct 55.
+2024-09-23 22:59:51.955 | INFO     | __main__:evaluate_add_sub:32 - Running on 56 case... total 395
+2024-09-23 23:00:02.965 | INFO     | __main__:evaluate_add_sub:51 - On 56 case, PS correct 56 and ZS correct 56.
+2024-09-23 23:00:02.965 | INFO     | __main__:evaluate_add_sub:32 - Running on 57 case... total 395
+2024-09-23 23:00:11.099 | INFO     | __main__:evaluate_add_sub:51 - On 57 case, PS correct 57 and ZS correct 57.
+2024-09-23 23:00:11.099 | INFO     | __main__:evaluate_add_sub:32 - Running on 58 case... total 395
+2024-09-23 23:00:18.939 | INFO     | __main__:evaluate_add_sub:51 - On 58 case, PS correct 58 and ZS correct 58.
+2024-09-23 23:00:18.939 | INFO     | __main__:evaluate_add_sub:32 - Running on 59 case... total 395
+2024-09-23 23:00:26.358 | INFO     | __main__:evaluate_add_sub:51 - On 59 case, PS correct 59 and ZS correct 59.
+2024-09-23 23:00:26.358 | INFO     | __main__:evaluate_add_sub:32 - Running on 60 case... total 395
+2024-09-23 23:00:37.089 | INFO     | __main__:evaluate_add_sub:51 - On 60 case, PS correct 60 and ZS correct 60.
+2024-09-23 23:00:37.089 | INFO     | __main__:evaluate_add_sub:32 - Running on 61 case... total 395
+2024-09-23 23:00:47.380 | INFO     | __main__:evaluate_add_sub:51 - On 61 case, PS correct 61 and ZS correct 61.
+2024-09-23 23:00:47.380 | INFO     | __main__:evaluate_add_sub:32 - Running on 62 case... total 395
+2024-09-23 23:00:57.154 | INFO     | __main__:evaluate_add_sub:51 - On 62 case, PS correct 62 and ZS correct 62.
+2024-09-23 23:00:57.154 | INFO     | __main__:evaluate_add_sub:32 - Running on 63 case... total 395
+2024-09-23 23:01:10.472 | INFO     | __main__:evaluate_add_sub:51 - On 63 case, PS correct 63 and ZS correct 63.
+2024-09-23 23:01:10.472 | INFO     | __main__:evaluate_add_sub:32 - Running on 64 case... total 395
+2024-09-23 23:01:20.938 | INFO     | __main__:evaluate_add_sub:51 - On 64 case, PS correct 64 and ZS correct 64.
+2024-09-23 23:01:20.938 | INFO     | __main__:evaluate_add_sub:32 - Running on 65 case... total 395
+2024-09-23 23:01:28.102 | INFO     | __main__:evaluate_add_sub:51 - On 65 case, PS correct 65 and ZS correct 65.
+2024-09-23 23:01:28.102 | INFO     | __main__:evaluate_add_sub:32 - Running on 66 case... total 395
+2024-09-23 23:01:35.418 | INFO     | __main__:evaluate_add_sub:51 - On 66 case, PS correct 66 and ZS correct 66.
+2024-09-23 23:01:35.418 | INFO     | __main__:evaluate_add_sub:32 - Running on 67 case... total 395
+2024-09-23 23:01:42.889 | INFO     | __main__:evaluate_add_sub:51 - On 67 case, PS correct 67 and ZS correct 67.
+2024-09-23 23:01:42.889 | INFO     | __main__:evaluate_add_sub:32 - Running on 68 case... total 395
+2024-09-23 23:01:49.841 | INFO     | __main__:evaluate_add_sub:51 - On 68 case, PS correct 68 and ZS correct 68.
+2024-09-23 23:01:49.842 | INFO     | __main__:evaluate_add_sub:32 - Running on 69 case... total 395
+2024-09-23 23:01:56.947 | INFO     | __main__:evaluate_add_sub:51 - On 69 case, PS correct 69 and ZS correct 69.
+2024-09-23 23:01:56.947 | INFO     | __main__:evaluate_add_sub:32 - Running on 70 case... total 395
+2024-09-23 23:02:04.237 | INFO     | __main__:evaluate_add_sub:51 - On 70 case, PS correct 70 and ZS correct 70.
+2024-09-23 23:02:04.237 | INFO     | __main__:evaluate_add_sub:32 - Running on 71 case... total 395
+2024-09-23 23:02:10.485 | INFO     | __main__:evaluate_add_sub:51 - On 71 case, PS correct 71 and ZS correct 71.
+2024-09-23 23:02:10.485 | INFO     | __main__:evaluate_add_sub:32 - Running on 72 case... total 395
+2024-09-23 23:02:21.101 | INFO     | __main__:evaluate_add_sub:51 - On 72 case, PS correct 72 and ZS correct 72.
+2024-09-23 23:02:21.101 | INFO     | __main__:evaluate_add_sub:32 - Running on 73 case... total 395
+2024-09-23 23:02:27.977 | INFO     | __main__:evaluate_add_sub:51 - On 73 case, PS correct 73 and ZS correct 73.
+2024-09-23 23:02:27.977 | INFO     | __main__:evaluate_add_sub:32 - Running on 74 case... total 395
+2024-09-23 23:02:34.407 | INFO     | __main__:evaluate_add_sub:51 - On 74 case, PS correct 74 and ZS correct 74.
+2024-09-23 23:02:34.408 | INFO     | __main__:evaluate_add_sub:32 - Running on 75 case... total 395
+2024-09-23 23:02:40.502 | INFO     | __main__:evaluate_add_sub:51 - On 75 case, PS correct 75 and ZS correct 75.
+2024-09-23 23:02:40.503 | INFO     | __main__:evaluate_add_sub:32 - Running on 76 case... total 395
+2024-09-23 23:02:48.649 | INFO     | __main__:evaluate_add_sub:51 - On 76 case, PS correct 76 and ZS correct 76.
+2024-09-23 23:02:48.649 | INFO     | __main__:evaluate_add_sub:32 - Running on 77 case... total 395
+2024-09-23 23:02:55.223 | INFO     | __main__:evaluate_add_sub:51 - On 77 case, PS correct 77 and ZS correct 77.
+2024-09-23 23:02:55.223 | INFO     | __main__:evaluate_add_sub:32 - Running on 78 case... total 395
+2024-09-23 23:03:02.871 | INFO     | __main__:evaluate_add_sub:51 - On 78 case, PS correct 78 and ZS correct 78.
+2024-09-23 23:03:02.871 | INFO     | __main__:evaluate_add_sub:32 - Running on 79 case... total 395
+2024-09-23 23:03:09.914 | INFO     | __main__:evaluate_add_sub:51 - On 79 case, PS correct 79 and ZS correct 79.
+2024-09-23 23:03:09.914 | INFO     | __main__:evaluate_add_sub:32 - Running on 80 case... total 395
+2024-09-23 23:03:17.354 | INFO     | __main__:evaluate_add_sub:51 - On 80 case, PS correct 80 and ZS correct 80.
+2024-09-23 23:03:17.354 | INFO     | __main__:evaluate_add_sub:32 - Running on 81 case... total 395
+2024-09-23 23:03:24.081 | INFO     | __main__:evaluate_add_sub:51 - On 81 case, PS correct 81 and ZS correct 81.
+2024-09-23 23:03:24.081 | INFO     | __main__:evaluate_add_sub:32 - Running on 82 case... total 395
+2024-09-23 23:03:32.015 | INFO     | __main__:evaluate_add_sub:51 - On 82 case, PS correct 82 and ZS correct 82.
+2024-09-23 23:03:32.015 | INFO     | __main__:evaluate_add_sub:32 - Running on 83 case... total 395
+2024-09-23 23:03:38.294 | INFO     | __main__:evaluate_add_sub:51 - On 83 case, PS correct 83 and ZS correct 83.
+2024-09-23 23:03:38.294 | INFO     | __main__:evaluate_add_sub:32 - Running on 84 case... total 395
+2024-09-23 23:03:45.356 | INFO     | __main__:evaluate_add_sub:51 - On 84 case, PS correct 84 and ZS correct 84.
+2024-09-23 23:03:45.357 | INFO     | __main__:evaluate_add_sub:32 - Running on 85 case... total 395
+2024-09-23 23:03:52.588 | INFO     | __main__:evaluate_add_sub:51 - On 85 case, PS correct 85 and ZS correct 85.
+2024-09-23 23:03:52.588 | INFO     | __main__:evaluate_add_sub:32 - Running on 86 case... total 395
+2024-09-23 23:04:01.480 | INFO     | __main__:evaluate_add_sub:51 - On 86 case, PS correct 86 and ZS correct 86.
+2024-09-23 23:04:01.481 | INFO     | __main__:evaluate_add_sub:32 - Running on 87 case... total 395

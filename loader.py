@@ -5,7 +5,7 @@ Load the dataset
 import json
 from typing import TypeVar, Type
 from abc import ABC, abstractmethod
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, ValidationError, Field
 
 
 class Problem(ABC, BaseModel):
@@ -74,13 +74,22 @@ class AddSub(Problem):
     sQuestion: str
 
     def problem(self) -> str:
-        """
-        Give the description of the problem
-        """
         return self.sQuestion
 
     def answer(self) -> str:
-        """
-        Give the answer of the problem
-        """
         return self.lSolutions[0]
+
+
+class GSM8K(Problem):
+    """
+    model of a problem from GSM8K dataset
+    """
+
+    question: str
+    _answer: str = Field(alias="answers")
+
+    def problem(self) -> str:
+        return self.question
+
+    def answer(self) -> str:
+        return self._answer
