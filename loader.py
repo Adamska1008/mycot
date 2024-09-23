@@ -4,10 +4,32 @@ Load the dataset
 
 import json
 from typing import TypeVar, Type
+from abc import ABC, abstractmethod
 from pydantic import BaseModel, ValidationError
 
 
-T = TypeVar("T", bound=BaseModel)
+class Problem(ABC, BaseModel):
+    """
+    Interface of a problem BaseModel
+    """
+
+    @abstractmethod
+    def problem(self) -> str:
+        """
+        Give the description of the problem
+        """
+
+    @abstractmethod
+    def answer(self) -> str:
+        """
+        Give the answer of the problem
+        """
+
+
+# TODO: Define selective problem
+
+
+T = TypeVar("T", bound=Problem)
 
 
 def load_json(file_path: str, model: Type[T]) -> list[T]:
@@ -41,7 +63,7 @@ def load_json(file_path: str, model: Type[T]) -> list[T]:
     return data_list
 
 
-class AddSub(BaseModel):
+class AddSub(Problem):
     """
     model of a problem from AddSub dataset
     """
