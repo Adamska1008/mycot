@@ -26,7 +26,21 @@ class Problem(ABC, BaseModel):
         """
 
 
-# TODO: Define selective problem
+class MultiChoiceProblem(Problem):
+    """
+    Interface of a multiple choice problem
+    The return of `answer()` must be one of [A, B, C, D, ...]
+    """
+
+    @abstractmethod
+    def options(self) -> dict[str, str]:
+        """
+        Option A of the problem
+
+        Returns:
+            A dict containing four keys: [A, B, C, D, ...], and their corresponding values
+            Notice that the values should not contain the option(e.g."A") itself
+        """
 
 
 T = TypeVar("T", bound=Problem)
@@ -65,6 +79,25 @@ def load_json(file_path: str, model: Type[T], length_limit: int = None) -> list[
     return data_list
 
 
+def load_jsonl(file_path: str, model: Type[T], length_limit: int = None) -> list[T]:
+    """Similar"""
+    data_list = []
+    with open(file_path, "r", encoding="utf-8") as file:
+        for line in file:
+            try:
+                item_data = json.loads(line)
+                try:
+                    item = model(**item_data)
+                    data_list.append(item)
+                except ValidationError as e:
+                    print(f"Validation error for item {item_data}: {e}")
+            except json.JSONDecodeError as e:
+                print(f"Error reading jsonl file: {e}")
+    if length_limit:
+        return data_list[:length_limit]
+    return data_list
+
+
 class AddSub(Problem):
     """
     model of a problem from AddSub dataset
@@ -95,3 +128,29 @@ class GSM8K(Problem):
 
     def answer(self) -> str:
         return str(self.raw_answer)
+
+
+class AQuA(MultiChoiceProblem):
+    """
+    model of a problem from AQuA dataset
+    """
+
+    question: str
+    raw_options: list[str] = Field(alias="options")
+    rationale: str
+    correct: str
+
+    def problem(self) -> str:
+        return self.question
+
+    def answer(self) -> str:
+        return self.correct
+
+    def options(self) -> dict[str, str]:
+        res = {}
+        for index, option in enumerate(self.raw_options):
+            letter = chr(index + 65)
+            while option.startswith(f"{letter}("):
+                option = option[2:]
+            res[letter] = option
+        return res

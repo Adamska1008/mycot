@@ -4,10 +4,11 @@ Doing evaluate stuff
 
 from typing import Type, TypeVar
 from loguru import logger
-from loader import load_json, Problem, AddSub, GSM8K
+from loader import load_json, load_jsonl, Problem, MultiChoiceProblem, AddSub, GSM8K
 from solver import PSCoTSolver, ZSCoTSolver
 
 T = TypeVar("T", bound=Problem)
+M = TypeVar("M", bound=MultiChoiceProblem)
 
 
 def number_equal(lhs: str, rhs: str) -> bool:
@@ -21,9 +22,9 @@ def number_equal(lhs: str, rhs: str) -> bool:
         return False
 
 
-def evaluate(file_path: str, model: Type[T], length_limit: int = None):
+def evaluate_numerical(file_path: str, model: Type[T], length_limit: int = None):
     """
-    Evaluate the accuracy of AddSub Dataset
+    Evaluate the accuracy of Dataset who's numerical
     """
     dataset = load_json(file_path, model, length_limit)
     tot_cnt = len(dataset)
@@ -31,25 +32,25 @@ def evaluate(file_path: str, model: Type[T], length_limit: int = None):
     ps_correct_cnt = 0
     zs_solver = ZSCoTSolver()
     zs_correct_cnt = 0
-    for index, add_sub in enumerate(dataset):
+    for index, numerical in enumerate(dataset):
         logger.info(f"Running on {index + 1} case... total {tot_cnt}")
         # test ps_solver
-        ps_solver.set_problem(add_sub.problem())
+        ps_solver.set_problem(numerical.problem())
         ps_answer = ps_solver.solve_numerical()
-        if number_equal(ps_answer, add_sub.answer()):
+        if number_equal(ps_answer, numerical.answer()):
             ps_correct_cnt += 1
         else:
             logger.warning(
-                f"PS failed {index + 1}!!! expected {add_sub.answer()}, actual {ps_answer}."
+                f"PS failed {index + 1}!!! expected {numerical.answer()}, actual {ps_answer}."
             )
         # test zs_solver
-        zs_solver.set_problem(add_sub.problem())
+        zs_solver.set_problem(numerical.problem())
         zs_answer = zs_solver.solve_numerical()
-        if number_equal(zs_answer, add_sub.answer()):
+        if number_equal(zs_answer, numerical.answer()):
             zs_correct_cnt += 1
         else:
             logger.warning(
-                f"ZS failed {index + 1}!!! expected {add_sub.answer()}, actual {zs_answer}."
+                f"ZS failed {index + 1}!!! expected {numerical.answer()}, actual {zs_answer}."
             )
         logger.info(
             f"On {index + 1} case, PS correct {ps_correct_cnt} and ZS correct {zs_correct_cnt}."
@@ -59,16 +60,53 @@ def evaluate(file_path: str, model: Type[T], length_limit: int = None):
     logger.info(f"ZS Solver accuracy: {zs_correct_cnt / tot_cnt}")
 
 
+def evaluate_multichoice(file_path: str, model: Type[T], length_limit: int):
+    """
+    Evaluate the accuracy of Dataset who's multi-choice
+    """
+    dataset = load_jsonl(file_path, model, length_limit)
+    tot_cnt = len(dataset)
+    ps_solver = PSCoTSolver()
+    ps_correct_cnt = 0
+    zs_solver = ZSCoTSolver()
+    zs_correct_cnt = 0
+    for index, multi_choice in enumerate(dataset):
+        logger.info(f"Running on {index + 1} case... total {tot_cnt}")
+        # test ps_solver
+        ps_solver.set_problem(multi_choice)
+        ps_answer = ps_solver.solve_multichoice(multi_choice.options())
+        if ps_answer.lower() == multi_choice.answer().lower():
+            ps_correct_cnt += 1
+        else:
+            logger.warning(
+                f"PS failed {index + 1}!!! expected {multi_choice.answer()}, actual {ps_answer}."
+            )
+        # test zs_solver
+        zs_solver.set_problem(multi_choice)
+        zs_answer = zs_solver.solve_multichoice(multi_choice.options())
+        if zs_answer.lower() == multi_choice.answer().lower():
+            zs_correct_cnt += 1
+        else:
+            logger.warning(
+                f"ZS failed {index + 1}!!! expected {multi_choice.answer()}, actual {zs_answer}."
+            )
+        logger.info(
+            f"On {index + 1} case, PS correct {ps_correct_cnt} and ZS correct {zs_correct_cnt}."
+        )
+    logger.info(f"PS Solver accuracy: {ps_correct_cnt / tot_cnt}")
+    logger.info(f"ZS Solver accuracy: {zs_correct_cnt / tot_cnt}")
+
+
 def evaluate_add_sub(file_path: str):
     """Evaluate AddSub Dataset"""
-    evaluate(file_path, AddSub)
+    evaluate_numerical(file_path, AddSub)
 
 
 def evaluate_gsm8k(file_path: str):
     """Evaluate GSM8K Dataset"""
-    evaluate(file_path, GSM8K, 300)
+    evaluate_numerical(file_path, GSM8K, 300)
 
 
 if __name__ == "__main__":
-    logger.add("gsm8k.log", level="INFO")
-    evaluate_gsm8k("./dataset/gsm8k.json")
+    logger.add("AQuA.log", level="INFO")
+    evaluate_gsm8k("./dataset/AQuA.jsonl")
