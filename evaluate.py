@@ -35,7 +35,7 @@ def evaluate(file_path: str, model: Type[T], length_limit: int = None):
         logger.info(f"Running on {index + 1} case... total {tot_cnt}")
         # test ps_solver
         ps_solver.set_problem(add_sub.problem())
-        ps_answer = ps_solver.solve()
+        ps_answer = ps_solver.solve_numerical()
         if number_equal(ps_answer, add_sub.answer()):
             ps_correct_cnt += 1
         else:
@@ -44,7 +44,7 @@ def evaluate(file_path: str, model: Type[T], length_limit: int = None):
             )
         # test zs_solver
         zs_solver.set_problem(add_sub.problem())
-        zs_answer = zs_solver.solve()
+        zs_answer = zs_solver.solve_numerical()
         if number_equal(zs_answer, add_sub.answer()):
             zs_correct_cnt += 1
         else:
