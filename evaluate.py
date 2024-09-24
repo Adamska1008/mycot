@@ -70,5 +70,5 @@ def evaluate_gsm8k(file_path: str):
 
 
 if __name__ == "__main__":
-    logger.add("output.log", level="INFO")
+    logger.add("gsm8k.log", level="INFO")
     evaluate_gsm8k("./dataset/gsm8k.json")

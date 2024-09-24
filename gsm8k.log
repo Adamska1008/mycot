@@ -1,0 +1,629 @@
+2024-09-23 23:56:41.448 | INFO     | __main__:evaluate:35 - Running on 1 case... total 300
+2024-09-23 23:56:56.193 | INFO     | __main__:evaluate:54 - On 1 case, PS correct 1 and ZS correct 1.
+2024-09-23 23:56:56.193 | INFO     | __main__:evaluate:35 - Running on 2 case... total 300
+2024-09-23 23:57:06.255 | INFO     | __main__:evaluate:54 - On 2 case, PS correct 2 and ZS correct 2.
+2024-09-23 23:57:06.255 | INFO     | __main__:evaluate:35 - Running on 3 case... total 300
+2024-09-23 23:57:21.408 | INFO     | __main__:evaluate:54 - On 3 case, PS correct 3 and ZS correct 3.
+2024-09-23 23:57:21.408 | INFO     | __main__:evaluate:35 - Running on 4 case... total 300
+2024-09-23 23:57:36.331 | INFO     | __main__:evaluate:54 - On 4 case, PS correct 4 and ZS correct 4.
+2024-09-23 23:57:36.331 | INFO     | __main__:evaluate:35 - Running on 5 case... total 300
+2024-09-23 23:57:55.666 | INFO     | __main__:evaluate:54 - On 5 case, PS correct 5 and ZS correct 5.
+2024-09-23 23:57:55.666 | INFO     | __main__:evaluate:35 - Running on 6 case... total 300
+2024-09-23 23:58:14.468 | INFO     | __main__:evaluate:54 - On 6 case, PS correct 6 and ZS correct 6.
+2024-09-23 23:58:14.468 | INFO     | __main__:evaluate:35 - Running on 7 case... total 300
+2024-09-23 23:58:25.082 | INFO     | __main__:evaluate:54 - On 7 case, PS correct 7 and ZS correct 7.
+2024-09-23 23:58:25.082 | INFO     | __main__:evaluate:35 - Running on 8 case... total 300
+2024-09-23 23:58:38.210 | WARNING  | __main__:evaluate:42 - PS failed 8!!! expected 160.0, actual 120.000000.
+2024-09-23 23:58:46.892 | INFO     | __main__:evaluate:54 - On 8 case, PS correct 7 and ZS correct 8.
+2024-09-23 23:58:46.893 | INFO     | __main__:evaluate:35 - Running on 9 case... total 300
+2024-09-23 23:59:04.763 | INFO     | __main__:evaluate:54 - On 9 case, PS correct 8 and ZS correct 9.
+2024-09-23 23:59:04.763 | INFO     | __main__:evaluate:35 - Running on 10 case... total 300
+2024-09-23 23:59:19.199 | INFO     | __main__:evaluate:54 - On 10 case, PS correct 9 and ZS correct 10.
+2024-09-23 23:59:19.199 | INFO     | __main__:evaluate:35 - Running on 11 case... total 300
+2024-09-23 23:59:33.485 | INFO     | __main__:evaluate:54 - On 11 case, PS correct 10 and ZS correct 11.
+2024-09-23 23:59:33.486 | INFO     | __main__:evaluate:35 - Running on 12 case... total 300
+2024-09-23 23:59:45.839 | INFO     | __main__:evaluate:54 - On 12 case, PS correct 11 and ZS correct 12.
+2024-09-23 23:59:45.840 | INFO     | __main__:evaluate:35 - Running on 13 case... total 300
+2024-09-23 23:59:56.235 | WARNING  | __main__:evaluate:42 - PS failed 13!!! expected 13.0, actual 12.000000.
+2024-09-24 00:00:05.691 | WARNING  | __main__:evaluate:51 - ZS failed 13!!! expected 13.0, actual 12.000000.
+2024-09-24 00:00:05.691 | INFO     | __main__:evaluate:54 - On 13 case, PS correct 11 and ZS correct 12.
+2024-09-24 00:00:05.693 | INFO     | __main__:evaluate:35 - Running on 14 case... total 300
+2024-09-24 00:00:27.913 | INFO     | __main__:evaluate:54 - On 14 case, PS correct 12 and ZS correct 13.
+2024-09-24 00:00:27.913 | INFO     | __main__:evaluate:35 - Running on 15 case... total 300
+2024-09-24 00:00:40.701 | INFO     | __main__:evaluate:54 - On 15 case, PS correct 13 and ZS correct 14.
+2024-09-24 00:00:40.702 | INFO     | __main__:evaluate:35 - Running on 16 case... total 300
+2024-09-24 00:01:05.014 | INFO     | __main__:evaluate:54 - On 16 case, PS correct 14 and ZS correct 15.
+2024-09-24 00:01:05.014 | INFO     | __main__:evaluate:35 - Running on 17 case... total 300
+2024-09-24 00:01:17.661 | INFO     | __main__:evaluate:54 - On 17 case, PS correct 15 and ZS correct 16.
+2024-09-24 00:01:17.661 | INFO     | __main__:evaluate:35 - Running on 18 case... total 300
+2024-09-24 00:01:31.470 | INFO     | __main__:evaluate:54 - On 18 case, PS correct 16 and ZS correct 17.
+2024-09-24 00:01:31.470 | INFO     | __main__:evaluate:35 - Running on 19 case... total 300
+2024-09-24 00:01:43.595 | INFO     | __main__:evaluate:54 - On 19 case, PS correct 17 and ZS correct 18.
+2024-09-24 00:01:43.595 | INFO     | __main__:evaluate:35 - Running on 20 case... total 300
+2024-09-24 00:01:57.753 | INFO     | __main__:evaluate:54 - On 20 case, PS correct 18 and ZS correct 19.
+2024-09-24 00:01:57.753 | INFO     | __main__:evaluate:35 - Running on 21 case... total 300
+2024-09-24 00:02:24.375 | INFO     | __main__:evaluate:54 - On 21 case, PS correct 19 and ZS correct 20.
+2024-09-24 00:02:24.375 | INFO     | __main__:evaluate:35 - Running on 22 case... total 300
+2024-09-24 00:02:34.746 | INFO     | __main__:evaluate:54 - On 22 case, PS correct 20 and ZS correct 21.
+2024-09-24 00:02:34.746 | INFO     | __main__:evaluate:35 - Running on 23 case... total 300
+2024-09-24 00:02:44.983 | INFO     | __main__:evaluate:54 - On 23 case, PS correct 21 and ZS correct 22.
+2024-09-24 00:02:44.983 | INFO     | __main__:evaluate:35 - Running on 24 case... total 300
+2024-09-24 00:02:56.499 | INFO     | __main__:evaluate:54 - On 24 case, PS correct 22 and ZS correct 23.
+2024-09-24 00:02:56.499 | INFO     | __main__:evaluate:35 - Running on 25 case... total 300
+2024-09-24 00:03:06.641 | INFO     | __main__:evaluate:54 - On 25 case, PS correct 23 and ZS correct 24.
+2024-09-24 00:03:06.642 | INFO     | __main__:evaluate:35 - Running on 26 case... total 300
+2024-09-24 00:03:20.429 | INFO     | __main__:evaluate:54 - On 26 case, PS correct 24 and ZS correct 25.
+2024-09-24 00:03:20.429 | INFO     | __main__:evaluate:35 - Running on 27 case... total 300
+2024-09-24 00:03:36.384 | INFO     | __main__:evaluate:54 - On 27 case, PS correct 25 and ZS correct 26.
+2024-09-24 00:03:36.385 | INFO     | __main__:evaluate:35 - Running on 28 case... total 300
+2024-09-24 00:03:47.599 | INFO     | __main__:evaluate:54 - On 28 case, PS correct 26 and ZS correct 27.
+2024-09-24 00:03:47.600 | INFO     | __main__:evaluate:35 - Running on 29 case... total 300
+2024-09-24 00:04:02.900 | INFO     | __main__:evaluate:54 - On 29 case, PS correct 27 and ZS correct 28.
+2024-09-24 00:04:02.900 | INFO     | __main__:evaluate:35 - Running on 30 case... total 300
+2024-09-24 00:04:11.125 | INFO     | __main__:evaluate:54 - On 30 case, PS correct 28 and ZS correct 29.
+2024-09-24 00:04:11.125 | INFO     | __main__:evaluate:35 - Running on 31 case... total 300
+2024-09-24 00:04:20.591 | INFO     | __main__:evaluate:54 - On 31 case, PS correct 29 and ZS correct 30.
+2024-09-24 00:04:20.591 | INFO     | __main__:evaluate:35 - Running on 32 case... total 300
+2024-09-24 00:04:33.648 | INFO     | __main__:evaluate:54 - On 32 case, PS correct 30 and ZS correct 31.
+2024-09-24 00:04:33.649 | INFO     | __main__:evaluate:35 - Running on 33 case... total 300
+2024-09-24 00:04:43.848 | INFO     | __main__:evaluate:54 - On 33 case, PS correct 31 and ZS correct 32.
+2024-09-24 00:04:43.848 | INFO     | __main__:evaluate:35 - Running on 34 case... total 300
+2024-09-24 00:04:53.289 | INFO     | __main__:evaluate:54 - On 34 case, PS correct 32 and ZS correct 33.
+2024-09-24 00:04:53.289 | INFO     | __main__:evaluate:35 - Running on 35 case... total 300
+2024-09-24 00:05:04.003 | INFO     | __main__:evaluate:54 - On 35 case, PS correct 33 and ZS correct 34.
+2024-09-24 00:05:04.004 | INFO     | __main__:evaluate:35 - Running on 36 case... total 300
+2024-09-24 00:05:14.999 | INFO     | __main__:evaluate:54 - On 36 case, PS correct 34 and ZS correct 35.
+2024-09-24 00:05:14.999 | INFO     | __main__:evaluate:35 - Running on 37 case... total 300
+2024-09-24 00:05:26.024 | INFO     | __main__:evaluate:54 - On 37 case, PS correct 35 and ZS correct 36.
+2024-09-24 00:05:26.024 | INFO     | __main__:evaluate:35 - Running on 38 case... total 300
+2024-09-24 00:05:32.633 | WARNING  | __main__:evaluate:42 - PS failed 38!!! expected 2.0, actual 0.
+2024-09-24 00:05:38.832 | WARNING  | __main__:evaluate:51 - ZS failed 38!!! expected 2.0, actual 0.
+2024-09-24 00:05:38.833 | INFO     | __main__:evaluate:54 - On 38 case, PS correct 35 and ZS correct 36.
+2024-09-24 00:05:38.833 | INFO     | __main__:evaluate:35 - Running on 39 case... total 300
+2024-09-24 00:05:51.711 | INFO     | __main__:evaluate:54 - On 39 case, PS correct 36 and ZS correct 37.
+2024-09-24 00:05:51.711 | INFO     | __main__:evaluate:35 - Running on 40 case... total 300
+2024-09-24 00:06:09.550 | INFO     | __main__:evaluate:54 - On 40 case, PS correct 37 and ZS correct 38.
+2024-09-24 00:06:09.550 | INFO     | __main__:evaluate:35 - Running on 41 case... total 300
+2024-09-24 00:06:20.961 | INFO     | __main__:evaluate:54 - On 41 case, PS correct 38 and ZS correct 39.
+2024-09-24 00:06:20.961 | INFO     | __main__:evaluate:35 - Running on 42 case... total 300
+2024-09-24 00:06:34.182 | INFO     | __main__:evaluate:54 - On 42 case, PS correct 39 and ZS correct 40.
+2024-09-24 00:06:34.182 | INFO     | __main__:evaluate:35 - Running on 43 case... total 300
+2024-09-24 00:06:45.063 | INFO     | __main__:evaluate:54 - On 43 case, PS correct 40 and ZS correct 41.
+2024-09-24 00:06:45.063 | INFO     | __main__:evaluate:35 - Running on 44 case... total 300
+2024-09-24 00:06:57.127 | INFO     | __main__:evaluate:54 - On 44 case, PS correct 41 and ZS correct 42.
+2024-09-24 00:06:57.127 | INFO     | __main__:evaluate:35 - Running on 45 case... total 300
+2024-09-24 00:07:09.737 | INFO     | __main__:evaluate:54 - On 45 case, PS correct 42 and ZS correct 43.
+2024-09-24 00:07:09.737 | INFO     | __main__:evaluate:35 - Running on 46 case... total 300
+2024-09-24 00:07:26.251 | INFO     | __main__:evaluate:54 - On 46 case, PS correct 43 and ZS correct 44.
+2024-09-24 00:07:26.252 | INFO     | __main__:evaluate:35 - Running on 47 case... total 300
+2024-09-24 00:07:41.131 | INFO     | __main__:evaluate:54 - On 47 case, PS correct 44 and ZS correct 45.
+2024-09-24 00:07:41.132 | INFO     | __main__:evaluate:35 - Running on 48 case... total 300
+2024-09-24 00:07:59.952 | INFO     | __main__:evaluate:54 - On 48 case, PS correct 45 and ZS correct 46.
+2024-09-24 00:07:59.952 | INFO     | __main__:evaluate:35 - Running on 49 case... total 300
+2024-09-24 00:08:09.829 | INFO     | __main__:evaluate:54 - On 49 case, PS correct 46 and ZS correct 47.
+2024-09-24 00:08:09.830 | INFO     | __main__:evaluate:35 - Running on 50 case... total 300
+2024-09-24 00:08:22.335 | INFO     | __main__:evaluate:54 - On 50 case, PS correct 47 and ZS correct 48.
+2024-09-24 00:08:22.335 | INFO     | __main__:evaluate:35 - Running on 51 case... total 300
+2024-09-24 00:08:34.639 | INFO     | __main__:evaluate:54 - On 51 case, PS correct 48 and ZS correct 49.
+2024-09-24 00:08:34.640 | INFO     | __main__:evaluate:35 - Running on 52 case... total 300
+2024-09-24 00:08:49.283 | INFO     | __main__:evaluate:54 - On 52 case, PS correct 49 and ZS correct 50.
+2024-09-24 00:08:49.284 | INFO     | __main__:evaluate:35 - Running on 53 case... total 300
+2024-09-24 00:09:03.105 | INFO     | __main__:evaluate:54 - On 53 case, PS correct 50 and ZS correct 51.
+2024-09-24 00:09:03.105 | INFO     | __main__:evaluate:35 - Running on 54 case... total 300
+2024-09-24 00:09:20.248 | INFO     | __main__:evaluate:54 - On 54 case, PS correct 51 and ZS correct 52.
+2024-09-24 00:09:20.248 | INFO     | __main__:evaluate:35 - Running on 55 case... total 300
+2024-09-24 00:09:31.954 | INFO     | __main__:evaluate:54 - On 55 case, PS correct 52 and ZS correct 53.
+2024-09-24 00:09:31.954 | INFO     | __main__:evaluate:35 - Running on 56 case... total 300
+2024-09-24 00:09:39.759 | INFO     | __main__:evaluate:54 - On 56 case, PS correct 53 and ZS correct 54.
+2024-09-24 00:09:39.759 | INFO     | __main__:evaluate:35 - Running on 57 case... total 300
+2024-09-24 00:09:49.126 | INFO     | __main__:evaluate:54 - On 57 case, PS correct 54 and ZS correct 55.
+2024-09-24 00:09:49.126 | INFO     | __main__:evaluate:35 - Running on 58 case... total 300
+2024-09-24 00:10:00.582 | INFO     | __main__:evaluate:54 - On 58 case, PS correct 55 and ZS correct 56.
+2024-09-24 00:10:00.582 | INFO     | __main__:evaluate:35 - Running on 59 case... total 300
+2024-09-24 00:10:17.045 | INFO     | __main__:evaluate:54 - On 59 case, PS correct 56 and ZS correct 57.
+2024-09-24 00:10:17.045 | INFO     | __main__:evaluate:35 - Running on 60 case... total 300
+2024-09-24 00:10:25.275 | INFO     | __main__:evaluate:54 - On 60 case, PS correct 57 and ZS correct 58.
+2024-09-24 00:10:25.275 | INFO     | __main__:evaluate:35 - Running on 61 case... total 300
+2024-09-24 00:10:37.200 | INFO     | __main__:evaluate:54 - On 61 case, PS correct 58 and ZS correct 59.
+2024-09-24 00:10:37.200 | INFO     | __main__:evaluate:35 - Running on 62 case... total 300
+2024-09-24 00:10:44.989 | INFO     | __main__:evaluate:54 - On 62 case, PS correct 59 and ZS correct 60.
+2024-09-24 00:10:44.989 | INFO     | __main__:evaluate:35 - Running on 63 case... total 300
+2024-09-24 00:10:56.732 | WARNING  | __main__:evaluate:42 - PS failed 63!!! expected 25000.0, actual 75000.
+2024-09-24 00:11:03.001 | WARNING  | __main__:evaluate:51 - ZS failed 63!!! expected 25000.0, actual 75000.
+2024-09-24 00:11:03.001 | INFO     | __main__:evaluate:54 - On 63 case, PS correct 59 and ZS correct 60.
+2024-09-24 00:11:03.001 | INFO     | __main__:evaluate:35 - Running on 64 case... total 300
+2024-09-24 00:11:18.110 | INFO     | __main__:evaluate:54 - On 64 case, PS correct 60 and ZS correct 61.
+2024-09-24 00:11:18.111 | INFO     | __main__:evaluate:35 - Running on 65 case... total 300
+2024-09-24 00:11:30.148 | INFO     | __main__:evaluate:54 - On 65 case, PS correct 61 and ZS correct 62.
+2024-09-24 00:11:30.149 | INFO     | __main__:evaluate:35 - Running on 66 case... total 300
+2024-09-24 00:11:42.264 | INFO     | __main__:evaluate:54 - On 66 case, PS correct 62 and ZS correct 63.
+2024-09-24 00:11:42.265 | INFO     | __main__:evaluate:35 - Running on 67 case... total 300
+2024-09-24 00:11:54.671 | INFO     | __main__:evaluate:54 - On 67 case, PS correct 63 and ZS correct 64.
+2024-09-24 00:11:54.671 | INFO     | __main__:evaluate:35 - Running on 68 case... total 300
+2024-09-24 00:12:07.432 | INFO     | __main__:evaluate:54 - On 68 case, PS correct 64 and ZS correct 65.
+2024-09-24 00:12:07.432 | INFO     | __main__:evaluate:35 - Running on 69 case... total 300
+2024-09-24 00:12:19.311 | INFO     | __main__:evaluate:54 - On 69 case, PS correct 65 and ZS correct 66.
+2024-09-24 00:12:19.311 | INFO     | __main__:evaluate:35 - Running on 70 case... total 300
+2024-09-24 00:12:30.087 | INFO     | __main__:evaluate:54 - On 70 case, PS correct 66 and ZS correct 67.
+2024-09-24 00:12:30.087 | INFO     | __main__:evaluate:35 - Running on 71 case... total 300
+2024-09-24 00:12:40.384 | INFO     | __main__:evaluate:54 - On 71 case, PS correct 67 and ZS correct 68.
+2024-09-24 00:12:40.384 | INFO     | __main__:evaluate:35 - Running on 72 case... total 300
+2024-09-24 00:12:49.512 | INFO     | __main__:evaluate:54 - On 72 case, PS correct 68 and ZS correct 69.
+2024-09-24 00:12:49.512 | INFO     | __main__:evaluate:35 - Running on 73 case... total 300
+2024-09-24 00:13:03.207 | INFO     | __main__:evaluate:54 - On 73 case, PS correct 69 and ZS correct 70.
+2024-09-24 00:13:03.208 | INFO     | __main__:evaluate:35 - Running on 74 case... total 300
+2024-09-24 00:13:17.088 | INFO     | __main__:evaluate:54 - On 74 case, PS correct 70 and ZS correct 71.
+2024-09-24 00:13:17.088 | INFO     | __main__:evaluate:35 - Running on 75 case... total 300
+2024-09-24 00:13:32.081 | INFO     | __main__:evaluate:54 - On 75 case, PS correct 71 and ZS correct 72.
+2024-09-24 00:13:32.081 | INFO     | __main__:evaluate:35 - Running on 76 case... total 300
+2024-09-24 00:13:39.792 | WARNING  | __main__:evaluate:42 - PS failed 76!!! expected 60.0, actual 7.500000.
+2024-09-24 00:13:46.312 | WARNING  | __main__:evaluate:51 - ZS failed 76!!! expected 60.0, actual 7.500000.
+2024-09-24 00:13:46.312 | INFO     | __main__:evaluate:54 - On 76 case, PS correct 71 and ZS correct 72.
+2024-09-24 00:13:46.312 | INFO     | __main__:evaluate:35 - Running on 77 case... total 300
+2024-09-24 00:14:01.783 | INFO     | __main__:evaluate:54 - On 77 case, PS correct 72 and ZS correct 73.
+2024-09-24 00:14:01.783 | INFO     | __main__:evaluate:35 - Running on 78 case... total 300
+2024-09-24 00:14:13.978 | INFO     | __main__:evaluate:54 - On 78 case, PS correct 73 and ZS correct 74.
+2024-09-24 00:14:13.978 | INFO     | __main__:evaluate:35 - Running on 79 case... total 300
+2024-09-24 00:14:31.629 | INFO     | __main__:evaluate:54 - On 79 case, PS correct 74 and ZS correct 75.
+2024-09-24 00:14:31.629 | INFO     | __main__:evaluate:35 - Running on 80 case... total 300
+2024-09-24 00:14:40.737 | INFO     | __main__:evaluate:54 - On 80 case, PS correct 75 and ZS correct 76.
+2024-09-24 00:14:40.737 | INFO     | __main__:evaluate:35 - Running on 81 case... total 300
+2024-09-24 00:14:58.512 | INFO     | __main__:evaluate:54 - On 81 case, PS correct 76 and ZS correct 77.
+2024-09-24 00:14:58.512 | INFO     | __main__:evaluate:35 - Running on 82 case... total 300
+2024-09-24 00:15:08.182 | INFO     | __main__:evaluate:54 - On 82 case, PS correct 77 and ZS correct 78.
+2024-09-24 00:15:08.183 | INFO     | __main__:evaluate:35 - Running on 83 case... total 300
+2024-09-24 00:15:17.281 | INFO     | __main__:evaluate:54 - On 83 case, PS correct 78 and ZS correct 79.
+2024-09-24 00:15:17.282 | INFO     | __main__:evaluate:35 - Running on 84 case... total 300
+2024-09-24 00:15:29.644 | INFO     | __main__:evaluate:54 - On 84 case, PS correct 79 and ZS correct 80.
+2024-09-24 00:15:29.645 | INFO     | __main__:evaluate:35 - Running on 85 case... total 300
+2024-09-24 00:15:55.213 | INFO     | __main__:evaluate:54 - On 85 case, PS correct 80 and ZS correct 81.
+2024-09-24 00:15:55.213 | INFO     | __main__:evaluate:35 - Running on 86 case... total 300
+2024-09-24 00:16:03.922 | INFO     | __main__:evaluate:54 - On 86 case, PS correct 81 and ZS correct 82.
+2024-09-24 00:16:03.922 | INFO     | __main__:evaluate:35 - Running on 87 case... total 300
+2024-09-24 00:16:16.939 | INFO     | __main__:evaluate:54 - On 87 case, PS correct 82 and ZS correct 83.
+2024-09-24 00:16:16.940 | INFO     | __main__:evaluate:35 - Running on 88 case... total 300
+2024-09-24 00:16:23.544 | WARNING  | __main__:evaluate:42 - PS failed 88!!! expected 9360.0, actual 7920.
+2024-09-24 00:16:28.922 | WARNING  | __main__:evaluate:51 - ZS failed 88!!! expected 9360.0, actual 7920.
+2024-09-24 00:16:28.922 | INFO     | __main__:evaluate:54 - On 88 case, PS correct 82 and ZS correct 83.
+2024-09-24 00:16:28.923 | INFO     | __main__:evaluate:35 - Running on 89 case... total 300
+2024-09-24 00:16:39.759 | INFO     | __main__:evaluate:54 - On 89 case, PS correct 83 and ZS correct 84.
+2024-09-24 00:16:39.760 | INFO     | __main__:evaluate:35 - Running on 90 case... total 300
+2024-09-24 00:16:45.700 | WARNING  | __main__:evaluate:42 - PS failed 90!!! expected 24.0, actual 18.00.
+2024-09-24 00:16:52.030 | WARNING  | __main__:evaluate:51 - ZS failed 90!!! expected 24.0, actual 18.00.
+2024-09-24 00:16:52.031 | INFO     | __main__:evaluate:54 - On 90 case, PS correct 83 and ZS correct 84.
+2024-09-24 00:16:52.031 | INFO     | __main__:evaluate:35 - Running on 91 case... total 300
+2024-09-24 00:17:05.948 | INFO     | __main__:evaluate:54 - On 91 case, PS correct 84 and ZS correct 85.
+2024-09-24 00:17:05.948 | INFO     | __main__:evaluate:35 - Running on 92 case... total 300
+2024-09-24 00:17:19.960 | INFO     | __main__:evaluate:54 - On 92 case, PS correct 85 and ZS correct 86.
+2024-09-24 00:17:19.960 | INFO     | __main__:evaluate:35 - Running on 93 case... total 300
+2024-09-24 00:17:36.399 | INFO     | __main__:evaluate:54 - On 93 case, PS correct 86 and ZS correct 87.
+2024-09-24 00:17:36.399 | INFO     | __main__:evaluate:35 - Running on 94 case... total 300
+2024-09-24 00:17:43.210 | WARNING  | __main__:evaluate:42 - PS failed 94!!! expected 36.0, actual 36.363636.
+2024-09-24 00:17:49.424 | WARNING  | __main__:evaluate:51 - ZS failed 94!!! expected 36.0, actual 36.363636.
+2024-09-24 00:17:49.424 | INFO     | __main__:evaluate:54 - On 94 case, PS correct 86 and ZS correct 87.
+2024-09-24 00:17:49.424 | INFO     | __main__:evaluate:35 - Running on 95 case... total 300
+2024-09-24 00:18:03.486 | INFO     | __main__:evaluate:54 - On 95 case, PS correct 87 and ZS correct 88.
+2024-09-24 00:18:03.487 | INFO     | __main__:evaluate:35 - Running on 96 case... total 300
+2024-09-24 00:18:17.011 | INFO     | __main__:evaluate:54 - On 96 case, PS correct 88 and ZS correct 89.
+2024-09-24 00:18:17.012 | INFO     | __main__:evaluate:35 - Running on 97 case... total 300
+2024-09-24 00:18:30.329 | INFO     | __main__:evaluate:54 - On 97 case, PS correct 89 and ZS correct 90.
+2024-09-24 00:18:30.329 | INFO     | __main__:evaluate:35 - Running on 98 case... total 300
+2024-09-24 00:18:42.802 | INFO     | __main__:evaluate:54 - On 98 case, PS correct 90 and ZS correct 91.
+2024-09-24 00:18:42.802 | INFO     | __main__:evaluate:35 - Running on 99 case... total 300
+2024-09-24 00:18:56.052 | INFO     | __main__:evaluate:54 - On 99 case, PS correct 91 and ZS correct 92.
+2024-09-24 00:18:56.052 | INFO     | __main__:evaluate:35 - Running on 100 case... total 300
+2024-09-24 00:19:07.062 | INFO     | __main__:evaluate:54 - On 100 case, PS correct 92 and ZS correct 93.
+2024-09-24 00:19:07.062 | INFO     | __main__:evaluate:35 - Running on 101 case... total 300
+2024-09-24 00:19:29.400 | INFO     | __main__:evaluate:54 - On 101 case, PS correct 93 and ZS correct 94.
+2024-09-24 00:19:29.400 | INFO     | __main__:evaluate:35 - Running on 102 case... total 300
+2024-09-24 00:19:38.684 | INFO     | __main__:evaluate:54 - On 102 case, PS correct 94 and ZS correct 95.
+2024-09-24 00:19:38.685 | INFO     | __main__:evaluate:35 - Running on 103 case... total 300
+2024-09-24 00:19:54.241 | INFO     | __main__:evaluate:54 - On 103 case, PS correct 95 and ZS correct 96.
+2024-09-24 00:19:54.241 | INFO     | __main__:evaluate:35 - Running on 104 case... total 300
+2024-09-24 00:20:04.991 | INFO     | __main__:evaluate:54 - On 104 case, PS correct 96 and ZS correct 97.
+2024-09-24 00:20:04.991 | INFO     | __main__:evaluate:35 - Running on 105 case... total 300
+2024-09-24 00:20:21.495 | INFO     | __main__:evaluate:54 - On 105 case, PS correct 97 and ZS correct 98.
+2024-09-24 00:20:21.495 | INFO     | __main__:evaluate:35 - Running on 106 case... total 300
+2024-09-24 00:20:31.195 | INFO     | __main__:evaluate:54 - On 106 case, PS correct 98 and ZS correct 99.
+2024-09-24 00:20:31.195 | INFO     | __main__:evaluate:35 - Running on 107 case... total 300
+2024-09-24 00:20:49.351 | INFO     | __main__:evaluate:54 - On 107 case, PS correct 99 and ZS correct 100.
+2024-09-24 00:20:49.351 | INFO     | __main__:evaluate:35 - Running on 108 case... total 300
+2024-09-24 00:21:09.452 | INFO     | __main__:evaluate:54 - On 108 case, PS correct 100 and ZS correct 101.
+2024-09-24 00:21:09.452 | INFO     | __main__:evaluate:35 - Running on 109 case... total 300
+2024-09-24 00:21:21.496 | INFO     | __main__:evaluate:54 - On 109 case, PS correct 101 and ZS correct 102.
+2024-09-24 00:21:21.497 | INFO     | __main__:evaluate:35 - Running on 110 case... total 300
+2024-09-24 00:21:32.170 | INFO     | __main__:evaluate:54 - On 110 case, PS correct 102 and ZS correct 103.
+2024-09-24 00:21:32.171 | INFO     | __main__:evaluate:35 - Running on 111 case... total 300
+2024-09-24 00:21:47.467 | INFO     | __main__:evaluate:54 - On 111 case, PS correct 103 and ZS correct 104.
+2024-09-24 00:21:47.467 | INFO     | __main__:evaluate:35 - Running on 112 case... total 300
+2024-09-24 00:21:57.300 | INFO     | __main__:evaluate:54 - On 112 case, PS correct 104 and ZS correct 105.
+2024-09-24 00:21:57.301 | INFO     | __main__:evaluate:35 - Running on 113 case... total 300
+2024-09-24 00:22:09.208 | INFO     | __main__:evaluate:54 - On 113 case, PS correct 105 and ZS correct 106.
+2024-09-24 00:22:09.208 | INFO     | __main__:evaluate:35 - Running on 114 case... total 300
+2024-09-24 00:22:18.204 | INFO     | __main__:evaluate:54 - On 114 case, PS correct 106 and ZS correct 107.
+2024-09-24 00:22:18.204 | INFO     | __main__:evaluate:35 - Running on 115 case... total 300
+2024-09-24 00:22:35.579 | INFO     | __main__:evaluate:54 - On 115 case, PS correct 107 and ZS correct 108.
+2024-09-24 00:22:35.579 | INFO     | __main__:evaluate:35 - Running on 116 case... total 300
+2024-09-24 00:22:53.292 | INFO     | __main__:evaluate:54 - On 116 case, PS correct 108 and ZS correct 109.
+2024-09-24 00:22:53.293 | INFO     | __main__:evaluate:35 - Running on 117 case... total 300
+2024-09-24 00:23:04.813 | INFO     | __main__:evaluate:54 - On 117 case, PS correct 109 and ZS correct 110.
+2024-09-24 00:23:04.813 | INFO     | __main__:evaluate:35 - Running on 118 case... total 300
+2024-09-24 00:23:12.479 | INFO     | __main__:evaluate:54 - On 118 case, PS correct 110 and ZS correct 111.
+2024-09-24 00:23:12.479 | INFO     | __main__:evaluate:35 - Running on 119 case... total 300
+2024-09-24 00:23:25.192 | INFO     | __main__:evaluate:54 - On 119 case, PS correct 111 and ZS correct 112.
+2024-09-24 00:23:25.192 | INFO     | __main__:evaluate:35 - Running on 120 case... total 300
+2024-09-24 00:23:38.547 | WARNING  | __main__:evaluate:42 - PS failed 120!!! expected 95200.0, actual 99076.923077.
+2024-09-24 00:23:52.252 | WARNING  | __main__:evaluate:51 - ZS failed 120!!! expected 95200.0, actual 99076.923077.
+2024-09-24 00:23:52.252 | INFO     | __main__:evaluate:54 - On 120 case, PS correct 111 and ZS correct 112.
+2024-09-24 00:23:52.252 | INFO     | __main__:evaluate:35 - Running on 121 case... total 300
+2024-09-24 00:24:00.873 | INFO     | __main__:evaluate:54 - On 121 case, PS correct 112 and ZS correct 113.
+2024-09-24 00:24:00.873 | INFO     | __main__:evaluate:35 - Running on 122 case... total 300
+2024-09-24 00:24:12.041 | INFO     | __main__:evaluate:54 - On 122 case, PS correct 113 and ZS correct 114.
+2024-09-24 00:24:12.041 | INFO     | __main__:evaluate:35 - Running on 123 case... total 300
+2024-09-24 00:24:30.466 | INFO     | __main__:evaluate:54 - On 123 case, PS correct 114 and ZS correct 115.
+2024-09-24 00:24:30.467 | INFO     | __main__:evaluate:35 - Running on 124 case... total 300
+2024-09-24 00:24:42.391 | INFO     | __main__:evaluate:54 - On 124 case, PS correct 115 and ZS correct 116.
+2024-09-24 00:24:42.392 | INFO     | __main__:evaluate:35 - Running on 125 case... total 300
+2024-09-24 00:24:53.749 | INFO     | __main__:evaluate:54 - On 125 case, PS correct 116 and ZS correct 117.
+2024-09-24 00:24:53.749 | INFO     | __main__:evaluate:35 - Running on 126 case... total 300
+2024-09-24 00:25:05.884 | INFO     | __main__:evaluate:54 - On 126 case, PS correct 117 and ZS correct 118.
+2024-09-24 00:25:05.884 | INFO     | __main__:evaluate:35 - Running on 127 case... total 300
+2024-09-24 00:25:16.427 | INFO     | __main__:evaluate:54 - On 127 case, PS correct 118 and ZS correct 119.
+2024-09-24 00:25:16.428 | INFO     | __main__:evaluate:35 - Running on 128 case... total 300
+2024-09-24 00:25:24.808 | INFO     | __main__:evaluate:54 - On 128 case, PS correct 119 and ZS correct 120.
+2024-09-24 00:25:24.809 | INFO     | __main__:evaluate:35 - Running on 129 case... total 300
+2024-09-24 00:25:38.530 | INFO     | __main__:evaluate:54 - On 129 case, PS correct 120 and ZS correct 121.
+2024-09-24 00:25:38.530 | INFO     | __main__:evaluate:35 - Running on 130 case... total 300
+2024-09-24 00:25:58.023 | INFO     | __main__:evaluate:54 - On 130 case, PS correct 121 and ZS correct 122.
+2024-09-24 00:25:58.023 | INFO     | __main__:evaluate:35 - Running on 131 case... total 300
+2024-09-24 00:26:10.836 | INFO     | __main__:evaluate:54 - On 131 case, PS correct 122 and ZS correct 123.
+2024-09-24 00:26:10.837 | INFO     | __main__:evaluate:35 - Running on 132 case... total 300
+2024-09-24 00:26:19.771 | INFO     | __main__:evaluate:54 - On 132 case, PS correct 123 and ZS correct 124.
+2024-09-24 00:26:19.771 | INFO     | __main__:evaluate:35 - Running on 133 case... total 300
+2024-09-24 00:26:31.158 | INFO     | __main__:evaluate:54 - On 133 case, PS correct 124 and ZS correct 125.
+2024-09-24 00:26:31.159 | INFO     | __main__:evaluate:35 - Running on 134 case... total 300
+2024-09-24 00:26:46.347 | INFO     | __main__:evaluate:54 - On 134 case, PS correct 125 and ZS correct 126.
+2024-09-24 00:26:46.347 | INFO     | __main__:evaluate:35 - Running on 135 case... total 300
+2024-09-24 00:26:54.028 | INFO     | __main__:evaluate:54 - On 135 case, PS correct 126 and ZS correct 127.
+2024-09-24 00:26:54.029 | INFO     | __main__:evaluate:35 - Running on 136 case... total 300
+2024-09-24 00:27:07.226 | INFO     | __main__:evaluate:54 - On 136 case, PS correct 127 and ZS correct 128.
+2024-09-24 00:27:07.226 | INFO     | __main__:evaluate:35 - Running on 137 case... total 300
+2024-09-24 00:27:14.993 | INFO     | __main__:evaluate:54 - On 137 case, PS correct 128 and ZS correct 129.
+2024-09-24 00:27:14.993 | INFO     | __main__:evaluate:35 - Running on 138 case... total 300
+2024-09-24 00:27:27.749 | INFO     | __main__:evaluate:54 - On 138 case, PS correct 129 and ZS correct 130.
+2024-09-24 00:27:27.750 | INFO     | __main__:evaluate:35 - Running on 139 case... total 300
+2024-09-24 00:27:39.363 | INFO     | __main__:evaluate:54 - On 139 case, PS correct 130 and ZS correct 131.
+2024-09-24 00:27:39.363 | INFO     | __main__:evaluate:35 - Running on 140 case... total 300
+2024-09-24 00:27:49.436 | INFO     | __main__:evaluate:54 - On 140 case, PS correct 131 and ZS correct 132.
+2024-09-24 00:27:49.437 | INFO     | __main__:evaluate:35 - Running on 141 case... total 300
+2024-09-24 00:28:03.834 | INFO     | __main__:evaluate:54 - On 141 case, PS correct 132 and ZS correct 133.
+2024-09-24 00:28:03.834 | INFO     | __main__:evaluate:35 - Running on 142 case... total 300
+2024-09-24 00:28:17.721 | INFO     | __main__:evaluate:54 - On 142 case, PS correct 133 and ZS correct 134.
+2024-09-24 00:28:17.721 | INFO     | __main__:evaluate:35 - Running on 143 case... total 300
+2024-09-24 00:28:28.407 | INFO     | __main__:evaluate:54 - On 143 case, PS correct 134 and ZS correct 135.
+2024-09-24 00:28:28.407 | INFO     | __main__:evaluate:35 - Running on 144 case... total 300
+2024-09-24 00:28:45.697 | INFO     | __main__:evaluate:54 - On 144 case, PS correct 135 and ZS correct 136.
+2024-09-24 00:28:45.698 | INFO     | __main__:evaluate:35 - Running on 145 case... total 300
+2024-09-24 00:29:02.446 | INFO     | __main__:evaluate:54 - On 145 case, PS correct 136 and ZS correct 137.
+2024-09-24 00:29:02.446 | INFO     | __main__:evaluate:35 - Running on 146 case... total 300
+2024-09-24 00:29:17.294 | INFO     | __main__:evaluate:54 - On 146 case, PS correct 137 and ZS correct 138.
+2024-09-24 00:29:17.295 | INFO     | __main__:evaluate:35 - Running on 147 case... total 300
+2024-09-24 00:29:31.024 | INFO     | __main__:evaluate:54 - On 147 case, PS correct 138 and ZS correct 139.
+2024-09-24 00:29:31.025 | INFO     | __main__:evaluate:35 - Running on 148 case... total 300
+2024-09-24 00:29:44.142 | INFO     | __main__:evaluate:54 - On 148 case, PS correct 139 and ZS correct 140.
+2024-09-24 00:29:44.143 | INFO     | __main__:evaluate:35 - Running on 149 case... total 300
+2024-09-24 00:29:54.233 | INFO     | __main__:evaluate:54 - On 149 case, PS correct 140 and ZS correct 141.
+2024-09-24 00:29:54.233 | INFO     | __main__:evaluate:35 - Running on 150 case... total 300
+2024-09-24 00:30:02.561 | INFO     | __main__:evaluate:54 - On 150 case, PS correct 141 and ZS correct 142.
+2024-09-24 00:30:02.561 | INFO     | __main__:evaluate:35 - Running on 151 case... total 300
+2024-09-24 00:30:20.931 | INFO     | __main__:evaluate:54 - On 151 case, PS correct 142 and ZS correct 143.
+2024-09-24 00:30:20.931 | INFO     | __main__:evaluate:35 - Running on 152 case... total 300
+2024-09-24 00:30:34.065 | INFO     | __main__:evaluate:54 - On 152 case, PS correct 143 and ZS correct 144.
+2024-09-24 00:30:34.066 | INFO     | __main__:evaluate:35 - Running on 153 case... total 300
+2024-09-24 00:30:47.793 | INFO     | __main__:evaluate:54 - On 153 case, PS correct 144 and ZS correct 145.
+2024-09-24 00:30:47.793 | INFO     | __main__:evaluate:35 - Running on 154 case... total 300
+2024-09-24 00:31:05.727 | INFO     | __main__:evaluate:54 - On 154 case, PS correct 145 and ZS correct 146.
+2024-09-24 00:31:05.728 | INFO     | __main__:evaluate:35 - Running on 155 case... total 300
+2024-09-24 00:31:21.540 | INFO     | __main__:evaluate:54 - On 155 case, PS correct 146 and ZS correct 147.
+2024-09-24 00:31:21.540 | INFO     | __main__:evaluate:35 - Running on 156 case... total 300
+2024-09-24 00:31:39.409 | INFO     | __main__:evaluate:54 - On 156 case, PS correct 147 and ZS correct 148.
+2024-09-24 00:31:39.410 | INFO     | __main__:evaluate:35 - Running on 157 case... total 300
+2024-09-24 00:31:52.052 | INFO     | __main__:evaluate:54 - On 157 case, PS correct 148 and ZS correct 149.
+2024-09-24 00:31:52.052 | INFO     | __main__:evaluate:35 - Running on 158 case... total 300
+2024-09-24 00:32:09.488 | INFO     | __main__:evaluate:54 - On 158 case, PS correct 149 and ZS correct 150.
+2024-09-24 00:32:09.489 | INFO     | __main__:evaluate:35 - Running on 159 case... total 300
+2024-09-24 00:32:17.688 | INFO     | __main__:evaluate:54 - On 159 case, PS correct 150 and ZS correct 151.
+2024-09-24 00:32:17.688 | INFO     | __main__:evaluate:35 - Running on 160 case... total 300
+2024-09-24 00:32:26.383 | INFO     | __main__:evaluate:54 - On 160 case, PS correct 151 and ZS correct 152.
+2024-09-24 00:32:26.384 | INFO     | __main__:evaluate:35 - Running on 161 case... total 300
+2024-09-24 00:32:36.446 | INFO     | __main__:evaluate:54 - On 161 case, PS correct 152 and ZS correct 153.
+2024-09-24 00:32:36.446 | INFO     | __main__:evaluate:35 - Running on 162 case... total 300
+2024-09-24 00:32:51.310 | INFO     | __main__:evaluate:54 - On 162 case, PS correct 153 and ZS correct 154.
+2024-09-24 00:32:51.311 | INFO     | __main__:evaluate:35 - Running on 163 case... total 300
+2024-09-24 00:33:03.094 | INFO     | __main__:evaluate:54 - On 163 case, PS correct 154 and ZS correct 155.
+2024-09-24 00:33:03.094 | INFO     | __main__:evaluate:35 - Running on 164 case... total 300
+2024-09-24 00:33:17.146 | INFO     | __main__:evaluate:54 - On 164 case, PS correct 155 and ZS correct 156.
+2024-09-24 00:33:17.146 | INFO     | __main__:evaluate:35 - Running on 165 case... total 300
+2024-09-24 00:33:30.260 | INFO     | __main__:evaluate:54 - On 165 case, PS correct 156 and ZS correct 157.
+2024-09-24 00:33:30.260 | INFO     | __main__:evaluate:35 - Running on 166 case... total 300
+2024-09-24 00:33:43.146 | INFO     | __main__:evaluate:54 - On 166 case, PS correct 157 and ZS correct 158.
+2024-09-24 00:33:43.146 | INFO     | __main__:evaluate:35 - Running on 167 case... total 300
+2024-09-24 00:33:52.767 | INFO     | __main__:evaluate:54 - On 167 case, PS correct 158 and ZS correct 159.
+2024-09-24 00:33:52.768 | INFO     | __main__:evaluate:35 - Running on 168 case... total 300
+2024-09-24 00:34:07.144 | INFO     | __main__:evaluate:54 - On 168 case, PS correct 159 and ZS correct 160.
+2024-09-24 00:34:07.144 | INFO     | __main__:evaluate:35 - Running on 169 case... total 300
+2024-09-24 00:34:14.515 | INFO     | __main__:evaluate:54 - On 169 case, PS correct 160 and ZS correct 161.
+2024-09-24 00:34:14.515 | INFO     | __main__:evaluate:35 - Running on 170 case... total 300
+2024-09-24 00:34:24.672 | INFO     | __main__:evaluate:54 - On 170 case, PS correct 161 and ZS correct 162.
+2024-09-24 00:34:24.672 | INFO     | __main__:evaluate:35 - Running on 171 case... total 300
+2024-09-24 00:34:37.293 | INFO     | __main__:evaluate:54 - On 171 case, PS correct 162 and ZS correct 163.
+2024-09-24 00:34:37.293 | INFO     | __main__:evaluate:35 - Running on 172 case... total 300
+2024-09-24 00:34:51.623 | INFO     | __main__:evaluate:54 - On 172 case, PS correct 163 and ZS correct 164.
+2024-09-24 00:34:51.623 | INFO     | __main__:evaluate:35 - Running on 173 case... total 300
+2024-09-24 00:35:03.252 | INFO     | __main__:evaluate:54 - On 173 case, PS correct 164 and ZS correct 165.
+2024-09-24 00:35:03.253 | INFO     | __main__:evaluate:35 - Running on 174 case... total 300
+2024-09-24 00:35:15.706 | INFO     | __main__:evaluate:54 - On 174 case, PS correct 165 and ZS correct 166.
+2024-09-24 00:35:15.707 | INFO     | __main__:evaluate:35 - Running on 175 case... total 300
+2024-09-24 00:35:29.266 | INFO     | __main__:evaluate:54 - On 175 case, PS correct 166 and ZS correct 167.
+2024-09-24 00:35:29.266 | INFO     | __main__:evaluate:35 - Running on 176 case... total 300
+2024-09-24 00:35:42.427 | INFO     | __main__:evaluate:54 - On 176 case, PS correct 167 and ZS correct 168.
+2024-09-24 00:35:42.427 | INFO     | __main__:evaluate:35 - Running on 177 case... total 300
+2024-09-24 00:35:50.624 | INFO     | __main__:evaluate:54 - On 177 case, PS correct 168 and ZS correct 169.
+2024-09-24 00:35:50.625 | INFO     | __main__:evaluate:35 - Running on 178 case... total 300
+2024-09-24 00:36:06.255 | INFO     | __main__:evaluate:54 - On 178 case, PS correct 169 and ZS correct 170.
+2024-09-24 00:36:06.255 | INFO     | __main__:evaluate:35 - Running on 179 case... total 300
+2024-09-24 00:36:18.813 | INFO     | __main__:evaluate:54 - On 179 case, PS correct 170 and ZS correct 171.
+2024-09-24 00:36:18.813 | INFO     | __main__:evaluate:35 - Running on 180 case... total 300
+2024-09-24 00:36:28.931 | INFO     | __main__:evaluate:54 - On 180 case, PS correct 171 and ZS correct 172.
+2024-09-24 00:36:28.932 | INFO     | __main__:evaluate:35 - Running on 181 case... total 300
+2024-09-24 00:36:38.392 | INFO     | __main__:evaluate:54 - On 181 case, PS correct 172 and ZS correct 173.
+2024-09-24 00:36:38.393 | INFO     | __main__:evaluate:35 - Running on 182 case... total 300
+2024-09-24 00:36:47.864 | INFO     | __main__:evaluate:54 - On 182 case, PS correct 173 and ZS correct 174.
+2024-09-24 00:36:47.865 | INFO     | __main__:evaluate:35 - Running on 183 case... total 300
+2024-09-24 00:36:57.710 | INFO     | __main__:evaluate:54 - On 183 case, PS correct 174 and ZS correct 175.
+2024-09-24 00:36:57.710 | INFO     | __main__:evaluate:35 - Running on 184 case... total 300
+2024-09-24 00:37:12.514 | INFO     | __main__:evaluate:54 - On 184 case, PS correct 175 and ZS correct 176.
+2024-09-24 00:37:12.514 | INFO     | __main__:evaluate:35 - Running on 185 case... total 300
+2024-09-24 00:37:28.572 | INFO     | __main__:evaluate:54 - On 185 case, PS correct 176 and ZS correct 177.
+2024-09-24 00:37:28.572 | INFO     | __main__:evaluate:35 - Running on 186 case... total 300
+2024-09-24 00:37:38.848 | INFO     | __main__:evaluate:54 - On 186 case, PS correct 177 and ZS correct 178.
+2024-09-24 00:37:38.849 | INFO     | __main__:evaluate:35 - Running on 187 case... total 300
+2024-09-24 00:38:00.334 | INFO     | __main__:evaluate:54 - On 187 case, PS correct 178 and ZS correct 179.
+2024-09-24 00:38:00.334 | INFO     | __main__:evaluate:35 - Running on 188 case... total 300
+2024-09-24 00:38:06.179 | WARNING  | __main__:evaluate:42 - PS failed 188!!! expected 106.0, actual 106.120800.
+2024-09-24 00:38:12.067 | WARNING  | __main__:evaluate:51 - ZS failed 188!!! expected 106.0, actual 106.120800.
+2024-09-24 00:38:12.067 | INFO     | __main__:evaluate:54 - On 188 case, PS correct 178 and ZS correct 179.
+2024-09-24 00:38:12.067 | INFO     | __main__:evaluate:35 - Running on 189 case... total 300
+2024-09-24 00:38:24.082 | INFO     | __main__:evaluate:54 - On 189 case, PS correct 179 and ZS correct 180.
+2024-09-24 00:38:24.082 | INFO     | __main__:evaluate:35 - Running on 190 case... total 300
+2024-09-24 00:38:40.169 | INFO     | __main__:evaluate:54 - On 190 case, PS correct 180 and ZS correct 181.
+2024-09-24 00:38:40.169 | INFO     | __main__:evaluate:35 - Running on 191 case... total 300
+2024-09-24 00:38:50.934 | INFO     | __main__:evaluate:54 - On 191 case, PS correct 181 and ZS correct 182.
+2024-09-24 00:38:50.934 | INFO     | __main__:evaluate:35 - Running on 192 case... total 300
+2024-09-24 00:38:58.420 | INFO     | __main__:evaluate:54 - On 192 case, PS correct 182 and ZS correct 183.
+2024-09-24 00:38:58.421 | INFO     | __main__:evaluate:35 - Running on 193 case... total 300
+2024-09-24 00:39:08.210 | INFO     | __main__:evaluate:54 - On 193 case, PS correct 183 and ZS correct 184.
+2024-09-24 00:39:08.210 | INFO     | __main__:evaluate:35 - Running on 194 case... total 300
+2024-09-24 00:39:24.089 | INFO     | __main__:evaluate:54 - On 194 case, PS correct 184 and ZS correct 185.
+2024-09-24 00:39:24.089 | INFO     | __main__:evaluate:35 - Running on 195 case... total 300
+2024-09-24 00:39:32.591 | INFO     | __main__:evaluate:54 - On 195 case, PS correct 185 and ZS correct 186.
+2024-09-24 00:39:32.591 | INFO     | __main__:evaluate:35 - Running on 196 case... total 300
+2024-09-24 00:39:42.535 | INFO     | __main__:evaluate:54 - On 196 case, PS correct 186 and ZS correct 187.
+2024-09-24 00:39:42.536 | INFO     | __main__:evaluate:35 - Running on 197 case... total 300
+2024-09-24 00:39:51.541 | INFO     | __main__:evaluate:54 - On 197 case, PS correct 187 and ZS correct 188.
+2024-09-24 00:39:51.542 | INFO     | __main__:evaluate:35 - Running on 198 case... total 300
+2024-09-24 00:40:00.394 | INFO     | __main__:evaluate:54 - On 198 case, PS correct 188 and ZS correct 189.
+2024-09-24 00:40:00.394 | INFO     | __main__:evaluate:35 - Running on 199 case... total 300
+2024-09-24 00:40:12.099 | INFO     | __main__:evaluate:54 - On 199 case, PS correct 189 and ZS correct 190.
+2024-09-24 00:40:12.099 | INFO     | __main__:evaluate:35 - Running on 200 case... total 300
+2024-09-24 00:40:26.793 | INFO     | __main__:evaluate:54 - On 200 case, PS correct 190 and ZS correct 191.
+2024-09-24 00:40:26.793 | INFO     | __main__:evaluate:35 - Running on 201 case... total 300
+2024-09-24 00:40:36.603 | INFO     | __main__:evaluate:54 - On 201 case, PS correct 191 and ZS correct 192.
+2024-09-24 00:40:36.603 | INFO     | __main__:evaluate:35 - Running on 202 case... total 300
+2024-09-24 00:40:46.147 | INFO     | __main__:evaluate:54 - On 202 case, PS correct 192 and ZS correct 193.
+2024-09-24 00:40:46.147 | INFO     | __main__:evaluate:35 - Running on 203 case... total 300
+2024-09-24 00:40:57.958 | INFO     | __main__:evaluate:54 - On 203 case, PS correct 193 and ZS correct 194.
+2024-09-24 00:40:57.959 | INFO     | __main__:evaluate:35 - Running on 204 case... total 300
+2024-09-24 00:41:15.651 | INFO     | __main__:evaluate:54 - On 204 case, PS correct 194 and ZS correct 195.
+2024-09-24 00:41:15.651 | INFO     | __main__:evaluate:35 - Running on 205 case... total 300
+2024-09-24 00:41:33.873 | INFO     | __main__:evaluate:54 - On 205 case, PS correct 195 and ZS correct 196.
+2024-09-24 00:41:33.873 | INFO     | __main__:evaluate:35 - Running on 206 case... total 300
+2024-09-24 00:41:50.723 | INFO     | __main__:evaluate:54 - On 206 case, PS correct 196 and ZS correct 197.
+2024-09-24 00:41:50.723 | INFO     | __main__:evaluate:35 - Running on 207 case... total 300
+2024-09-24 00:42:01.563 | INFO     | __main__:evaluate:54 - On 207 case, PS correct 197 and ZS correct 198.
+2024-09-24 00:42:01.563 | INFO     | __main__:evaluate:35 - Running on 208 case... total 300
+2024-09-24 00:42:14.698 | INFO     | __main__:evaluate:54 - On 208 case, PS correct 198 and ZS correct 199.
+2024-09-24 00:42:14.698 | INFO     | __main__:evaluate:35 - Running on 209 case... total 300
+2024-09-24 00:42:24.794 | INFO     | __main__:evaluate:54 - On 209 case, PS correct 199 and ZS correct 200.
+2024-09-24 00:42:24.794 | INFO     | __main__:evaluate:35 - Running on 210 case... total 300
+2024-09-24 00:42:38.584 | INFO     | __main__:evaluate:54 - On 210 case, PS correct 200 and ZS correct 201.
+2024-09-24 00:42:38.584 | INFO     | __main__:evaluate:35 - Running on 211 case... total 300
+2024-09-24 00:42:51.442 | INFO     | __main__:evaluate:54 - On 211 case, PS correct 201 and ZS correct 202.
+2024-09-24 00:42:51.442 | INFO     | __main__:evaluate:35 - Running on 212 case... total 300
+2024-09-24 00:43:07.436 | INFO     | __main__:evaluate:54 - On 212 case, PS correct 202 and ZS correct 203.
+2024-09-24 00:43:07.436 | INFO     | __main__:evaluate:35 - Running on 213 case... total 300
+2024-09-24 00:43:18.923 | INFO     | __main__:evaluate:54 - On 213 case, PS correct 203 and ZS correct 204.
+2024-09-24 00:43:18.924 | INFO     | __main__:evaluate:35 - Running on 214 case... total 300
+2024-09-24 00:43:32.793 | INFO     | __main__:evaluate:54 - On 214 case, PS correct 204 and ZS correct 205.
+2024-09-24 00:43:32.793 | INFO     | __main__:evaluate:35 - Running on 215 case... total 300
+2024-09-24 00:43:49.601 | INFO     | __main__:evaluate:54 - On 215 case, PS correct 205 and ZS correct 206.
+2024-09-24 00:43:49.601 | INFO     | __main__:evaluate:35 - Running on 216 case... total 300
+2024-09-24 00:43:58.771 | INFO     | __main__:evaluate:54 - On 216 case, PS correct 206 and ZS correct 207.
+2024-09-24 00:43:58.771 | INFO     | __main__:evaluate:35 - Running on 217 case... total 300
+2024-09-24 00:44:08.049 | INFO     | __main__:evaluate:54 - On 217 case, PS correct 207 and ZS correct 208.
+2024-09-24 00:44:08.049 | INFO     | __main__:evaluate:35 - Running on 218 case... total 300
+2024-09-24 00:44:18.671 | INFO     | __main__:evaluate:54 - On 218 case, PS correct 208 and ZS correct 209.
+2024-09-24 00:44:18.672 | INFO     | __main__:evaluate:35 - Running on 219 case... total 300
+2024-09-24 00:44:33.704 | INFO     | __main__:evaluate:54 - On 219 case, PS correct 209 and ZS correct 210.
+2024-09-24 00:44:33.704 | INFO     | __main__:evaluate:35 - Running on 220 case... total 300
+2024-09-24 00:44:44.679 | INFO     | __main__:evaluate:54 - On 220 case, PS correct 210 and ZS correct 211.
+2024-09-24 00:44:44.680 | INFO     | __main__:evaluate:35 - Running on 221 case... total 300
+2024-09-24 00:44:53.311 | INFO     | __main__:evaluate:54 - On 221 case, PS correct 211 and ZS correct 212.
+2024-09-24 00:44:53.312 | INFO     | __main__:evaluate:35 - Running on 222 case... total 300
+2024-09-24 00:45:04.636 | INFO     | __main__:evaluate:54 - On 222 case, PS correct 212 and ZS correct 213.
+2024-09-24 00:45:04.636 | INFO     | __main__:evaluate:35 - Running on 223 case... total 300
+2024-09-24 00:45:11.859 | INFO     | __main__:evaluate:54 - On 223 case, PS correct 213 and ZS correct 214.
+2024-09-24 00:45:11.860 | INFO     | __main__:evaluate:35 - Running on 224 case... total 300
+2024-09-24 00:45:19.730 | INFO     | __main__:evaluate:54 - On 224 case, PS correct 214 and ZS correct 215.
+2024-09-24 00:45:19.730 | INFO     | __main__:evaluate:35 - Running on 225 case... total 300
+2024-09-24 00:45:28.411 | INFO     | __main__:evaluate:54 - On 225 case, PS correct 215 and ZS correct 216.
+2024-09-24 00:45:28.411 | INFO     | __main__:evaluate:35 - Running on 226 case... total 300
+2024-09-24 00:45:36.110 | INFO     | __main__:evaluate:54 - On 226 case, PS correct 216 and ZS correct 217.
+2024-09-24 00:45:36.111 | INFO     | __main__:evaluate:35 - Running on 227 case... total 300
+2024-09-24 00:45:42.117 | WARNING  | __main__:evaluate:42 - PS failed 227!!! expected 33.0, actual 33.333333.
+2024-09-24 00:45:47.506 | WARNING  | __main__:evaluate:51 - ZS failed 227!!! expected 33.0, actual 33.333333.
+2024-09-24 00:45:47.506 | INFO     | __main__:evaluate:54 - On 227 case, PS correct 216 and ZS correct 217.
+2024-09-24 00:45:47.506 | INFO     | __main__:evaluate:35 - Running on 228 case... total 300
+2024-09-24 00:46:03.022 | INFO     | __main__:evaluate:54 - On 228 case, PS correct 217 and ZS correct 218.
+2024-09-24 00:46:03.023 | INFO     | __main__:evaluate:35 - Running on 229 case... total 300
+2024-09-24 00:46:15.344 | INFO     | __main__:evaluate:54 - On 229 case, PS correct 218 and ZS correct 219.
+2024-09-24 00:46:15.344 | INFO     | __main__:evaluate:35 - Running on 230 case... total 300
+2024-09-24 00:46:31.871 | INFO     | __main__:evaluate:54 - On 230 case, PS correct 219 and ZS correct 220.
+2024-09-24 00:46:31.872 | INFO     | __main__:evaluate:35 - Running on 231 case... total 300
+2024-09-24 00:46:41.060 | INFO     | __main__:evaluate:54 - On 231 case, PS correct 220 and ZS correct 221.
+2024-09-24 00:46:41.060 | INFO     | __main__:evaluate:35 - Running on 232 case... total 300
+2024-09-24 00:46:49.266 | INFO     | __main__:evaluate:54 - On 232 case, PS correct 221 and ZS correct 222.
+2024-09-24 00:46:49.266 | INFO     | __main__:evaluate:35 - Running on 233 case... total 300
+2024-09-24 00:46:57.821 | INFO     | __main__:evaluate:54 - On 233 case, PS correct 222 and ZS correct 223.
+2024-09-24 00:46:57.821 | INFO     | __main__:evaluate:35 - Running on 234 case... total 300
+2024-09-24 00:47:09.478 | INFO     | __main__:evaluate:54 - On 234 case, PS correct 223 and ZS correct 224.
+2024-09-24 00:47:09.478 | INFO     | __main__:evaluate:35 - Running on 235 case... total 300
+2024-09-24 00:47:24.045 | INFO     | __main__:evaluate:54 - On 235 case, PS correct 224 and ZS correct 225.
+2024-09-24 00:47:24.045 | INFO     | __main__:evaluate:35 - Running on 236 case... total 300
+2024-09-24 00:47:37.768 | INFO     | __main__:evaluate:54 - On 236 case, PS correct 225 and ZS correct 226.
+2024-09-24 00:47:37.768 | INFO     | __main__:evaluate:35 - Running on 237 case... total 300
+2024-09-24 00:47:51.169 | INFO     | __main__:evaluate:54 - On 237 case, PS correct 226 and ZS correct 227.
+2024-09-24 00:47:51.169 | INFO     | __main__:evaluate:35 - Running on 238 case... total 300
+2024-09-24 00:47:57.357 | INFO     | __main__:evaluate:54 - On 238 case, PS correct 227 and ZS correct 228.
+2024-09-24 00:47:57.357 | INFO     | __main__:evaluate:35 - Running on 239 case... total 300
+2024-09-24 00:48:09.034 | INFO     | __main__:evaluate:54 - On 239 case, PS correct 228 and ZS correct 229.
+2024-09-24 00:48:09.034 | INFO     | __main__:evaluate:35 - Running on 240 case... total 300
+2024-09-24 00:48:20.731 | INFO     | __main__:evaluate:54 - On 240 case, PS correct 229 and ZS correct 230.
+2024-09-24 00:48:20.731 | INFO     | __main__:evaluate:35 - Running on 241 case... total 300
+2024-09-24 00:48:28.700 | INFO     | __main__:evaluate:54 - On 241 case, PS correct 230 and ZS correct 231.
+2024-09-24 00:48:28.700 | INFO     | __main__:evaluate:35 - Running on 242 case... total 300
+2024-09-24 00:48:37.675 | INFO     | __main__:evaluate:54 - On 242 case, PS correct 231 and ZS correct 232.
+2024-09-24 00:48:37.675 | INFO     | __main__:evaluate:35 - Running on 243 case... total 300
+2024-09-24 00:48:53.668 | INFO     | __main__:evaluate:54 - On 243 case, PS correct 232 and ZS correct 233.
+2024-09-24 00:48:53.669 | INFO     | __main__:evaluate:35 - Running on 244 case... total 300
+2024-09-24 00:49:04.950 | INFO     | __main__:evaluate:54 - On 244 case, PS correct 233 and ZS correct 234.
+2024-09-24 00:49:04.950 | INFO     | __main__:evaluate:35 - Running on 245 case... total 300
+2024-09-24 00:49:14.902 | INFO     | __main__:evaluate:54 - On 245 case, PS correct 234 and ZS correct 235.
+2024-09-24 00:49:14.903 | INFO     | __main__:evaluate:35 - Running on 246 case... total 300
+2024-09-24 00:49:19.197 | WARNING  | __main__:evaluate:42 - PS failed 246!!! expected 7.0, actual 14.
+2024-09-24 00:49:22.627 | WARNING  | __main__:evaluate:51 - ZS failed 246!!! expected 7.0, actual 14.
+2024-09-24 00:49:22.627 | INFO     | __main__:evaluate:54 - On 246 case, PS correct 234 and ZS correct 235.
+2024-09-24 00:49:22.627 | INFO     | __main__:evaluate:35 - Running on 247 case... total 300
+2024-09-24 00:49:33.990 | INFO     | __main__:evaluate:54 - On 247 case, PS correct 235 and ZS correct 236.
+2024-09-24 00:49:33.991 | INFO     | __main__:evaluate:35 - Running on 248 case... total 300
+2024-09-24 00:49:44.434 | INFO     | __main__:evaluate:54 - On 248 case, PS correct 236 and ZS correct 237.
+2024-09-24 00:49:44.434 | INFO     | __main__:evaluate:35 - Running on 249 case... total 300
+2024-09-24 00:49:52.401 | INFO     | __main__:evaluate:54 - On 249 case, PS correct 237 and ZS correct 238.
+2024-09-24 00:49:52.401 | INFO     | __main__:evaluate:35 - Running on 250 case... total 300
+2024-09-24 00:50:16.298 | INFO     | __main__:evaluate:54 - On 250 case, PS correct 238 and ZS correct 239.
+2024-09-24 00:50:16.298 | INFO     | __main__:evaluate:35 - Running on 251 case... total 300
+2024-09-24 00:50:29.026 | INFO     | __main__:evaluate:54 - On 251 case, PS correct 239 and ZS correct 240.
+2024-09-24 00:50:29.026 | INFO     | __main__:evaluate:35 - Running on 252 case... total 300
+2024-09-24 00:50:35.945 | INFO     | __main__:evaluate:54 - On 252 case, PS correct 240 and ZS correct 241.
+2024-09-24 00:50:35.945 | INFO     | __main__:evaluate:35 - Running on 253 case... total 300
+2024-09-24 00:50:47.686 | INFO     | __main__:evaluate:54 - On 253 case, PS correct 241 and ZS correct 242.
+2024-09-24 00:50:47.687 | INFO     | __main__:evaluate:35 - Running on 254 case... total 300
+2024-09-24 00:50:56.536 | INFO     | __main__:evaluate:54 - On 254 case, PS correct 242 and ZS correct 243.
+2024-09-24 00:50:56.536 | INFO     | __main__:evaluate:35 - Running on 255 case... total 300
+2024-09-24 00:51:05.853 | INFO     | __main__:evaluate:54 - On 255 case, PS correct 243 and ZS correct 244.
+2024-09-24 00:51:05.853 | INFO     | __main__:evaluate:35 - Running on 256 case... total 300
+2024-09-24 00:51:10.052 | WARNING  | __main__:evaluate:42 - PS failed 256!!! expected 192.0, actual 176.
+2024-09-24 00:51:14.567 | WARNING  | __main__:evaluate:51 - ZS failed 256!!! expected 192.0, actual 176.
+2024-09-24 00:51:14.568 | INFO     | __main__:evaluate:54 - On 256 case, PS correct 243 and ZS correct 244.
+2024-09-24 00:51:14.568 | INFO     | __main__:evaluate:35 - Running on 257 case... total 300
+2024-09-24 00:51:26.884 | INFO     | __main__:evaluate:54 - On 257 case, PS correct 244 and ZS correct 245.
+2024-09-24 00:51:26.885 | INFO     | __main__:evaluate:35 - Running on 258 case... total 300
+2024-09-24 00:51:39.857 | INFO     | __main__:evaluate:54 - On 258 case, PS correct 245 and ZS correct 246.
+2024-09-24 00:51:39.857 | INFO     | __main__:evaluate:35 - Running on 259 case... total 300
+2024-09-24 00:51:46.827 | INFO     | __main__:evaluate:54 - On 259 case, PS correct 246 and ZS correct 247.
+2024-09-24 00:51:46.828 | INFO     | __main__:evaluate:35 - Running on 260 case... total 300
+2024-09-24 00:52:04.661 | INFO     | __main__:evaluate:54 - On 260 case, PS correct 247 and ZS correct 248.
+2024-09-24 00:52:04.661 | INFO     | __main__:evaluate:35 - Running on 261 case... total 300
+2024-09-24 00:52:17.722 | INFO     | __main__:evaluate:54 - On 261 case, PS correct 248 and ZS correct 249.
+2024-09-24 00:52:17.722 | INFO     | __main__:evaluate:35 - Running on 262 case... total 300
+2024-09-24 00:52:25.733 | INFO     | __main__:evaluate:54 - On 262 case, PS correct 249 and ZS correct 250.
+2024-09-24 00:52:25.733 | INFO     | __main__:evaluate:35 - Running on 263 case... total 300
+2024-09-24 00:52:32.965 | INFO     | __main__:evaluate:54 - On 263 case, PS correct 250 and ZS correct 251.
+2024-09-24 00:52:32.965 | INFO     | __main__:evaluate:35 - Running on 264 case... total 300
+2024-09-24 00:52:42.651 | INFO     | __main__:evaluate:54 - On 264 case, PS correct 251 and ZS correct 252.
+2024-09-24 00:52:42.652 | INFO     | __main__:evaluate:35 - Running on 265 case... total 300
+2024-09-24 00:52:53.234 | INFO     | __main__:evaluate:54 - On 265 case, PS correct 252 and ZS correct 253.
+2024-09-24 00:52:53.234 | INFO     | __main__:evaluate:35 - Running on 266 case... total 300
+2024-09-24 00:53:03.473 | INFO     | __main__:evaluate:54 - On 266 case, PS correct 253 and ZS correct 254.
+2024-09-24 00:53:03.473 | INFO     | __main__:evaluate:35 - Running on 267 case... total 300
+2024-09-24 00:53:16.946 | INFO     | __main__:evaluate:54 - On 267 case, PS correct 254 and ZS correct 255.
+2024-09-24 00:53:16.947 | INFO     | __main__:evaluate:35 - Running on 268 case... total 300
+2024-09-24 00:53:21.864 | WARNING  | __main__:evaluate:42 - PS failed 268!!! expected 91.0, actual 51.
+2024-09-24 00:53:27.901 | WARNING  | __main__:evaluate:51 - ZS failed 268!!! expected 91.0, actual 51.
+2024-09-24 00:53:27.901 | INFO     | __main__:evaluate:54 - On 268 case, PS correct 254 and ZS correct 255.
+2024-09-24 00:53:27.901 | INFO     | __main__:evaluate:35 - Running on 269 case... total 300
+2024-09-24 00:53:37.883 | INFO     | __main__:evaluate:54 - On 269 case, PS correct 255 and ZS correct 256.
+2024-09-24 00:53:37.883 | INFO     | __main__:evaluate:35 - Running on 270 case... total 300
+2024-09-24 00:53:46.160 | INFO     | __main__:evaluate:54 - On 270 case, PS correct 256 and ZS correct 257.
+2024-09-24 00:53:46.160 | INFO     | __main__:evaluate:35 - Running on 271 case... total 300
+2024-09-24 00:53:58.925 | INFO     | __main__:evaluate:54 - On 271 case, PS correct 257 and ZS correct 258.
+2024-09-24 00:53:58.925 | INFO     | __main__:evaluate:35 - Running on 272 case... total 300
+2024-09-24 00:54:10.434 | INFO     | __main__:evaluate:54 - On 272 case, PS correct 258 and ZS correct 259.
+2024-09-24 00:54:10.434 | INFO     | __main__:evaluate:35 - Running on 273 case... total 300
+2024-09-24 00:54:32.963 | INFO     | __main__:evaluate:54 - On 273 case, PS correct 259 and ZS correct 260.
+2024-09-24 00:54:32.964 | INFO     | __main__:evaluate:35 - Running on 274 case... total 300
+2024-09-24 00:54:48.230 | INFO     | __main__:evaluate:54 - On 274 case, PS correct 260 and ZS correct 261.
+2024-09-24 00:54:48.230 | INFO     | __main__:evaluate:35 - Running on 275 case... total 300
+2024-09-24 00:54:57.224 | INFO     | __main__:evaluate:54 - On 275 case, PS correct 261 and ZS correct 262.
+2024-09-24 00:54:57.225 | INFO     | __main__:evaluate:35 - Running on 276 case... total 300
+2024-09-24 00:55:07.904 | INFO     | __main__:evaluate:54 - On 276 case, PS correct 262 and ZS correct 263.
+2024-09-24 00:55:07.904 | INFO     | __main__:evaluate:35 - Running on 277 case... total 300
+2024-09-24 00:55:20.984 | INFO     | __main__:evaluate:54 - On 277 case, PS correct 263 and ZS correct 264.
+2024-09-24 00:55:20.984 | INFO     | __main__:evaluate:35 - Running on 278 case... total 300
+2024-09-24 00:55:33.588 | INFO     | __main__:evaluate:54 - On 278 case, PS correct 264 and ZS correct 265.
+2024-09-24 00:55:33.588 | INFO     | __main__:evaluate:35 - Running on 279 case... total 300
+2024-09-24 00:55:40.414 | INFO     | __main__:evaluate:54 - On 279 case, PS correct 265 and ZS correct 266.
+2024-09-24 00:55:40.414 | INFO     | __main__:evaluate:35 - Running on 280 case... total 300
+2024-09-24 00:55:53.677 | INFO     | __main__:evaluate:54 - On 280 case, PS correct 266 and ZS correct 267.
+2024-09-24 00:55:53.677 | INFO     | __main__:evaluate:35 - Running on 281 case... total 300
+2024-09-24 00:56:04.702 | INFO     | __main__:evaluate:54 - On 281 case, PS correct 267 and ZS correct 268.
+2024-09-24 00:56:04.702 | INFO     | __main__:evaluate:35 - Running on 282 case... total 300
+2024-09-24 00:56:17.700 | INFO     | __main__:evaluate:54 - On 282 case, PS correct 268 and ZS correct 269.
+2024-09-24 00:56:17.700 | INFO     | __main__:evaluate:35 - Running on 283 case... total 300
+2024-09-24 00:56:27.696 | INFO     | __main__:evaluate:54 - On 283 case, PS correct 269 and ZS correct 270.
+2024-09-24 00:56:27.696 | INFO     | __main__:evaluate:35 - Running on 284 case... total 300
+2024-09-24 00:56:39.911 | INFO     | __main__:evaluate:54 - On 284 case, PS correct 270 and ZS correct 271.
+2024-09-24 00:56:39.912 | INFO     | __main__:evaluate:35 - Running on 285 case... total 300
+2024-09-24 00:56:53.213 | INFO     | __main__:evaluate:54 - On 285 case, PS correct 271 and ZS correct 272.
+2024-09-24 00:56:53.213 | INFO     | __main__:evaluate:35 - Running on 286 case... total 300
+2024-09-24 00:56:59.302 | INFO     | __main__:evaluate:54 - On 286 case, PS correct 272 and ZS correct 273.
+2024-09-24 00:56:59.303 | INFO     | __main__:evaluate:35 - Running on 287 case... total 300
+2024-09-24 00:57:09.755 | INFO     | __main__:evaluate:54 - On 287 case, PS correct 273 and ZS correct 274.
+2024-09-24 00:57:09.755 | INFO     | __main__:evaluate:35 - Running on 288 case... total 300
+2024-09-24 00:57:21.728 | INFO     | __main__:evaluate:54 - On 288 case, PS correct 274 and ZS correct 275.
+2024-09-24 00:57:21.729 | INFO     | __main__:evaluate:35 - Running on 289 case... total 300
+2024-09-24 00:57:38.767 | INFO     | __main__:evaluate:54 - On 289 case, PS correct 275 and ZS correct 276.
+2024-09-24 00:57:38.767 | INFO     | __main__:evaluate:35 - Running on 290 case... total 300
+2024-09-24 00:57:54.611 | INFO     | __main__:evaluate:54 - On 290 case, PS correct 276 and ZS correct 277.
+2024-09-24 00:57:54.611 | INFO     | __main__:evaluate:35 - Running on 291 case... total 300
+2024-09-24 00:58:03.396 | INFO     | __main__:evaluate:54 - On 291 case, PS correct 277 and ZS correct 278.
+2024-09-24 00:58:03.396 | INFO     | __main__:evaluate:35 - Running on 292 case... total 300
+2024-09-24 00:58:16.661 | INFO     | __main__:evaluate:54 - On 292 case, PS correct 278 and ZS correct 279.
+2024-09-24 00:58:16.662 | INFO     | __main__:evaluate:35 - Running on 293 case... total 300
+2024-09-24 00:58:28.341 | INFO     | __main__:evaluate:54 - On 293 case, PS correct 279 and ZS correct 280.
+2024-09-24 00:58:28.341 | INFO     | __main__:evaluate:35 - Running on 294 case... total 300
+2024-09-24 00:58:42.557 | INFO     | __main__:evaluate:54 - On 294 case, PS correct 280 and ZS correct 281.
+2024-09-24 00:58:42.557 | INFO     | __main__:evaluate:35 - Running on 295 case... total 300
+2024-09-24 00:58:51.435 | INFO     | __main__:evaluate:54 - On 295 case, PS correct 281 and ZS correct 282.
+2024-09-24 00:58:51.435 | INFO     | __main__:evaluate:35 - Running on 296 case... total 300
+2024-09-24 00:59:01.393 | INFO     | __main__:evaluate:54 - On 296 case, PS correct 282 and ZS correct 283.
+2024-09-24 00:59:01.393 | INFO     | __main__:evaluate:35 - Running on 297 case... total 300
+2024-09-24 00:59:21.744 | INFO     | __main__:evaluate:54 - On 297 case, PS correct 283 and ZS correct 284.
+2024-09-24 00:59:21.744 | INFO     | __main__:evaluate:35 - Running on 298 case... total 300
+2024-09-24 00:59:35.786 | INFO     | __main__:evaluate:54 - On 298 case, PS correct 284 and ZS correct 285.
+2024-09-24 00:59:35.787 | INFO     | __main__:evaluate:35 - Running on 299 case... total 300
+2024-09-24 00:59:45.663 | INFO     | __main__:evaluate:54 - On 299 case, PS correct 285 and ZS correct 286.
+2024-09-24 00:59:45.663 | INFO     | __main__:evaluate:35 - Running on 300 case... total 300
+2024-09-24 00:59:59.413 | INFO     | __main__:evaluate:54 - On 300 case, PS correct 286 and ZS correct 287.
+2024-09-24 00:59:59.413 | INFO     | __main__:evaluate:58 - PS Solver accuracy: 0.9533333333333334
+2024-09-24 00:59:59.414 | INFO     | __main__:evaluate:59 - ZS Solver accuracy: 0.9566666666666667

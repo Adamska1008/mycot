@@ -6,7 +6,7 @@ from agent import OpenAIChatAgent
 
 COT_AI_PROMPT = (
     "Let's first understand the problem, extract relevant variables and their corresponding numerals,"
-    "and devise a plan. Then, let's carry out the plan, caculate intermediate results"
+    "and **devise a plan**. Then, let's **carry out the plan**, caculate intermediate results"
     "(pay attention to calculation and common sense), solve the problem step by step, and show the answer."
 )
 

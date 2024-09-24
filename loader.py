@@ -88,10 +88,10 @@ class GSM8K(Problem):
     """
 
     question: str
-    _answer: str = Field(alias="answer")
+    raw_answer: float = Field(alias="answer")
 
     def problem(self) -> str:
         return self.question
 
     def answer(self) -> str:
-        return self._answer
+        return str(self.raw_answer)
