@@ -70,15 +70,17 @@ def evaluate_numerical(
     logger.info(f"ZS Solver accuracy: {zs_correct_cnt / tot_cnt}")
 
 
-def evaluate_multichoice(file_path: str, model: Type[T], length_limit: int = None):
+def evaluate_multichoice(
+    file_path: str, model: Type[T], length_limit: int = None, model_name: str = None
+):
     """
     Evaluate the accuracy of Dataset who's multi-choice
     """
     dataset = load_jsonl(file_path, model, length_limit)
     tot_cnt = len(dataset)
-    ps_solver = PSCoTSolver()
+    ps_solver = PSCoTSolver(model_name=model_name)
     ps_correct_cnt = 0
-    zs_solver = ZSCoTSolver()
+    zs_solver = ZSCoTSolver(model_name=model_name)
     zs_correct_cnt = 0
     for index, multi_choice in enumerate(dataset):
         logger.info(f"Running on {index + 1} case... total {tot_cnt}")
@@ -117,11 +119,11 @@ def evaluate_gsm8k(file_path: str, model_name: str = None):
     evaluate_numerical(file_path, GSM8K, 300, model_name)
 
 
-def evaluate_aqua(file_path: str):
+def evaluate_aqua(file_path: str, model_name: str = None):
     """Evaluate AQuA Dataset"""
-    evaluate_multichoice(file_path, AQuA)
+    evaluate_multichoice(file_path, AQuA, model_name=model_name)
 
 
 if __name__ == "__main__":
-    logger.add("add_sub-llama3.log", level="INFO")
-    evaluate_gsm8k("./dataset/AddSub.json", model_name="llama3:8b")
+    logger.add("gsm8k-llama3.log", level="INFO")
+    evaluate_aqua("./dataset/AQuA.jsonl", model_name="llama3:8b")

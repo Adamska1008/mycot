@@ -27,7 +27,7 @@ Run `evaluate.py` will create a logfile and shows the comparison of two solver o
 
 ## Conclusion
 
-PS and PS+ seems to be useless. The behave basically the same as zero-shot(e.g. add "AI: Let's think step by step").
+PS and PS+ seems to be useless. The behave basically the same as zero-shot(e.g. add "AI: Let's think step by step"). Wait, actually it's even worse when run on llama3:8b.
 
 ### gpt-4o-mini
 
@@ -36,9 +36,11 @@ PS and PS+ seems to be useless. The behave basically the same as zero-shot(e.g. 
 | Plan-and-Solve | 99.24% | 95.33% | 82.28% |
 | zero-shot      | 99.24% | 95.67% | 80.31% |
 
-### llama3:b
+### llama3:8b
 
-|                | AddSub | GSM8K | AQuA |
-| -------------- | ------ | ----- | ---- |
-| Plan-and-Solve | 77.72% |       |      |
-| zero-shot      | 87.34% |       |      |
+|                | AddSub | GSM8K  | AQuA   |
+| -------------- | ------ | ------ | ------ |
+| Plan-and-Solve | 77.72% | 25.67% | 29.52% |
+| zero-shot      | 87.34% | 68.33% | 50%    |
+
+Man! What can I say.
