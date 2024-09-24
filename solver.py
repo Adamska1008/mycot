@@ -3,7 +3,7 @@ Codes related to CoTSolver
 """
 
 from abc import ABC, abstractmethod
-from agent import OpenAIChatAgent
+from agent import ChatAgent
 
 COT_AI_PROMPT = (
     "Let's first understand the problem, extract relevant variables and their corresponding numerals,"
@@ -40,7 +40,8 @@ class CoTSolver(ABC):
         self.solve()
         return self.agent.post_human(
             "Therefore the answer is?"
-            "Output only a real number(e.g., 3.14) and do not use fractional form(like 1/2 or 3/4)."
+            "Output only a real number(e.g., 3.14). Do not use fractional form(like 1/2 or 3/4)."
+            "Do not show a equation like 1 + 1 = 2. In this case, output 2 only."
             "If your answer is a repeating decimal, round it to six decimal places."
         )
 
@@ -55,8 +56,10 @@ class CoTSolver(ABC):
         return self.agent.post_human(
             f"Here are {len(options_lines)} options for the answer:\n"
             + "\n".join(options_lines)
-            + "\n"
-            + "Please choose and output one of the upper letter of the options, e.g. A"
+            + "Please choose and output one of the upper letter of the options, e.g. A. "
+            "If you think none of them is correct, just output the most likely letter."
+            "Do not output anything beside the letter like A"
+            "Please do not use bold formatting in your output."
         )
 
 
@@ -65,9 +68,9 @@ class ZSCoTSolver(CoTSolver):
     Wraps an agent and use zero-shot CoT to solve a problem(usually math).
     """
 
-    def __init__(self, problem: str = None):
+    def __init__(self, problem: str = None, model_name: str = None):
         self._problem = problem
-        self._agent = OpenAIChatAgent()
+        self._agent = ChatAgent(model_name=model_name)
 
     @property
     def agent(self):
@@ -96,9 +99,9 @@ class PSCoTSolver(CoTSolver):
     Wraps an agent and use Plan-and-Solve CoT to solve a problem(usually math).
     """
 
-    def __init__(self, problem: str = None):
+    def __init__(self, problem: str = None, model_name: str = None):
         self._problem = problem
-        self._agent = OpenAIChatAgent()
+        self._agent = ChatAgent(model_name=model_name)
 
     @property
     def agent(self):

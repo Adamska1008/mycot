@@ -5,7 +5,7 @@ Load the dataset
 import json
 from typing import TypeVar, Type
 from abc import ABC, abstractmethod
-from pydantic import BaseModel, ValidationError, Field
+from pydantic import BaseModel, Field
 
 
 class Problem(ABC, BaseModel):
@@ -59,20 +59,11 @@ def load_json(file_path: str, model: Type[T], length_limit: int = None) -> list[
     """
     data_list = []
     with open(file_path, "r", encoding="utf-8") as file:
-        try:
-            data = json.load(file)
-            if isinstance(data, list):
-                for item_data in data:
-                    try:
-                        item = model(**item_data)
-                        data_list.append(item)
-                    except ValidationError as e:
-                        print(f"Validation error for item {item_data}: {e}")
-            else:
-                print("JSON root element is not an array")
-
-        except json.JSONDecodeError as e:
-            print(f"Error reading json file: {e}")
+        data = json.load(file)
+    if isinstance(data, list):
+        for item_data in data:
+            item = model(**item_data)
+            data_list.append(item)
 
     if length_limit:
         return data_list[:length_limit]
@@ -83,16 +74,11 @@ def load_jsonl(file_path: str, model: Type[T], length_limit: int = None) -> list
     """Similar"""
     data_list = []
     with open(file_path, "r", encoding="utf-8") as file:
-        for line in file:
-            try:
-                item_data = json.loads(line)
-                try:
-                    item = model(**item_data)
-                    data_list.append(item)
-                except ValidationError as e:
-                    print(f"Validation error for item {item_data}: {e}")
-            except json.JSONDecodeError as e:
-                print(f"Error reading jsonl file: {e}")
+        json_list = list(file)
+    for line in json_list:
+        item_data = json.loads(line)
+        item = model(**item_data)
+        data_list.append(item)
     if length_limit:
         return data_list[:length_limit]
     return data_list

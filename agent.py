@@ -2,8 +2,10 @@
 codes related to Agent
 """
 
+from abc import ABC
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
+from langchain_ollama import ChatOllama
 
 from langchain_core.chat_history import (
     BaseChatMessageHistory,
@@ -14,7 +16,7 @@ from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 
-class OpenAIChatAgent:
+class ChatAgent:
     """
     ChatBot based on OpenAI API
     """
@@ -28,8 +30,14 @@ class OpenAIChatAgent:
             cls.__store[session_id] = InMemoryChatMessageHistory()
         return cls.__store[session_id]
 
-    def __init__(self, system_prompt: str = None):
-        model = ChatOpenAI(model="gpt-4o-mini")
+    def __init__(self, system_prompt: str = None, model_name: str = "gpt-4o-mini"):
+        if model_name is None or model_name == "gpt-4o-mini":
+            model = ChatOpenAI(model="gpt-4o-mini")
+        elif model_name == "llama3:8b":
+            model = ChatOllama(model="llama3:8b")
+        else:
+            assert f"{model_name} not support"
+
         if system_prompt:
             prompt = ChatPromptTemplate.from_messages(
                 [
@@ -83,3 +91,8 @@ class OpenAIChatAgent:
     def post(self) -> str:
         """post based on current history"""
         return self.chain.invoke({"messages": []}, config=self.config)
+
+
+if __name__ == "__main__":
+    openai = ChatAgent()
+    print(openai.post_human("Hello!"))
