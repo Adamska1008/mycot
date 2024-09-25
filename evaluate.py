@@ -109,21 +109,21 @@ def evaluate_multichoice(
     logger.info(f"ZS Solver accuracy: {zs_correct_cnt / tot_cnt}")
 
 
-def evaluate_add_sub(file_path: str, model_name: str = None):
+def evaluate_add_sub(model_name: str = None):
     """Evaluate AddSub Dataset"""
-    evaluate_numerical(file_path, AddSub, model_name=model_name)
+    evaluate_numerical("./dataset/AddSub.json", AddSub, model_name=model_name)
 
 
-def evaluate_gsm8k(file_path: str, model_name: str = None):
+def evaluate_gsm8k(model_name: str = None):
     """Evaluate GSM8K Dataset"""
-    evaluate_numerical(file_path, GSM8K, 300, model_name)
+    evaluate_numerical("./dataset/gsm8k.json", GSM8K, model_name=model_name)
 
 
-def evaluate_aqua(file_path: str, model_name: str = None):
+def evaluate_aqua(model_name: str = None):
     """Evaluate AQuA Dataset"""
-    evaluate_multichoice(file_path, AQuA, model_name=model_name)
+    evaluate_multichoice("./dataset/AQuA.jsonl", AQuA, model_name=model_name)
 
 
 if __name__ == "__main__":
     logger.add("gsm8k-llama3.log", level="INFO")
-    evaluate_aqua("./dataset/AQuA.jsonl", model_name="llama3:8b")
+    evaluate_aqua(model_name="llama3:8b")
