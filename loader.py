@@ -14,6 +14,12 @@ class Problem(ABC, BaseModel):
     """
 
     @abstractmethod
+    def dataset_name() -> str:
+        """
+        Dataset name of the problem class
+        """
+
+    @abstractmethod
     def problem(self) -> str:
         """
         Give the description of the problem
@@ -100,6 +106,9 @@ class AddSub(Problem):
     def answer(self) -> str:
         return self.lSolutions[0]
 
+    def name() -> str:
+        return "AddSub" 
+
 
 class GSM8K(Problem):
     """
@@ -114,6 +123,9 @@ class GSM8K(Problem):
 
     def answer(self) -> str:
         return str(self.raw_answer)
+    
+    def name() -> str:
+        return "GSM8K"
 
 
 class AQuA(MultiChoiceProblem):
@@ -131,6 +143,9 @@ class AQuA(MultiChoiceProblem):
 
     def answer(self) -> str:
         return self.correct
+
+    def name() -> str:
+        return "AQuA"
 
     def options(self) -> dict[str, str]:
         res = {}

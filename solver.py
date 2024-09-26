@@ -3,7 +3,9 @@ Codes related to CoTSolver
 """
 
 from abc import ABC, abstractmethod
+import argparse
 from agent import ChatAgent
+from loader import AQuA, AddSub, GSM8K
 
 COT_AI_PROMPT = (
     "Let's first understand the problem, extract relevant variables and their corresponding numerals,"
@@ -31,6 +33,13 @@ class CoTSolver(ABC):
     def agent(self):
         """
         get the agent
+        """
+
+    @abstractmethod
+    def name() -> str:
+        """
+        name of the cot strategy
+        will be used in command line argument
         """
 
     def solve_numerical(self) -> str:
@@ -76,6 +85,9 @@ class ZSCoTSolver(CoTSolver):
     def agent(self):
         return self._agent
 
+    def name() -> str:
+        return "zero_shot"
+
     def set_problem(self, probelm: str) -> None:
         """
         Simple Setter
@@ -106,6 +118,9 @@ class PSCoTSolver(CoTSolver):
     @property
     def agent(self):
         return self._agent
+
+    def name() -> str:
+        return "plan_and_solve"
 
     def set_problem(self, problem: str):
         """
@@ -146,6 +161,9 @@ class GiveAListSolver(CoTSolver):
     def agent(self):
         return self._agent
 
+    def name():
+        return "give_a_list"
+
     def set_problem(self, problem: str):
         """
         Simple Setter
@@ -165,24 +183,9 @@ class GiveAListSolver(CoTSolver):
 
 
 if __name__ == "__main__":
-    print("===========Explicitly require a list=============")
-    list_solver = GiveAListSolver(
-        problem=(
-            "A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower."
-            "The top of the tower is observed from the car and, in the process,"
-            "it takes 10 minutes for the angle of elevation to change from 45\u00b0 to 60\u00b0."
-            "After how much more time will this car reach the base of the tower?"
-        )
-    )
-    print(list_solver.solve())
-    print()
-    print("===========Let's think step by step=============")
-    zs_solver = ZSCoTSolver(
-        problem=(
-            "A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower."
-            "The top of the tower is observed from the car and, in the process,"
-            "it takes 10 minutes for the angle of elevation to change from 45\u00b0 to 60\u00b0."
-            "After how much more time will this car reach the base of the tower?"
-        )
-    )
-    print(zs_solver.solve())
+    solver_names = [cls.name() for cls in  [ZSCoTSolver, PSCoTSolver, GiveAListSolver]]
+    dataset_names = [cls.name() for cls in [AQuA, AddSub, GSM8K]]
+    parser = argparse.ArgumentParser(description="使用这个脚本来快速测试某个Solver解决数据集中某一个题目的效果")
+    parser.add_argument("--solver", type=str, help="需要测试的Solver名", required=True, choices=solver_names)
+    parser.add_argument("--dataset", type=str, help="需要测试的数据集", required=True, choices=dataset_names)
+    args = parser.parse_args()
