@@ -33,14 +33,6 @@ class CoTSolver(ABC):
         get the agent
         """
 
-    @classmethod
-    @abstractmethod
-    def name(cls) -> str:
-        """
-        name of the cot strategy
-        will be used in command line argument
-        """
-
     def solve_numerical(self) -> str:
         """
         Solve a numerical problem, e.g. return only a number.
@@ -84,10 +76,6 @@ class ZSCoTSolver(CoTSolver):
     def agent(self):
         return self._agent
 
-    @classmethod
-    def name(cls) -> str:
-        return "zero_shot"
-
     def set_problem(self, probelm: str) -> None:
         """
         Simple Setter
@@ -118,10 +106,6 @@ class PSCoTSolver(CoTSolver):
     @property
     def agent(self):
         return self._agent
-
-    @classmethod
-    def name(cls) -> str:
-        return "plan_and_solve"
 
     def set_problem(self, problem: str):
         """
@@ -161,10 +145,6 @@ class GiveAListSolver(CoTSolver):
     @property
     def agent(self):
         return self._agent
-
-    @classmethod
-    def name(cls) -> str:
-        return "give_a_list"
 
     def set_problem(self, problem: str):
         """
