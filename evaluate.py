@@ -31,53 +31,80 @@ def number_equal(lhs: str, rhs: str) -> bool:
         return False
 
 
-def evaluate_numerical(
-    file_path: str, dataset: Type[T], length_limit: int = None, model_name: str = None
+def evaluate_problem(
+    file_path: str,
+    dataset: Type[T],
+    length_limit: int = None,
+    model_name: str = None,
+    is_numerical: bool = True,
 ):
     """
-    Evaluate the accuracy of Dataset who's numerical
+    评估数据集的准确性，适用于数值型和多选题
     """
-    dataset = load_json(file_path, dataset, length_limit)
+    dataset = (
+        load_json(file_path, dataset, length_limit)
+        if is_numerical
+        else load_jsonl(file_path, dataset, length_limit)
+    )
     tot_cnt = len(dataset)
     ps_solver = PSCoTSolver(model_name=model_name)
     ps_correct_cnt = 0
     zs_solver = ZSCoTSolver(model_name=model_name)
     zs_correct_cnt = 0
-    for index, numerical in enumerate(dataset):
-        logger.info(f"Running on {index + 1} case... total {tot_cnt}")
-        # test ps_solver
-        ps_solver.set_problem(numerical.problem())
-        ps_answer = ps_solver.solve_numerical()
-        if number_equal(ps_answer, numerical.answer()):
+
+    for index, problem in enumerate(dataset):
+        logger.info(f"正在运行第 {index + 1} 个案例... 共 {tot_cnt} 个")
+
+        # 测试 ps_solver
+        ps_solver.set_problem(problem.problem())
+        ps_answer = (
+            ps_solver.solve_numerical()
+            if is_numerical
+            else ps_solver.solve_multichoice(problem.options())
+        )
+        if (is_numerical and number_equal(ps_answer, problem.answer())) or (
+            not is_numerical and ps_answer.lower() == problem.answer().lower()
+        ):
             ps_correct_cnt += 1
         else:
             logger.warning(
-                f"PS failed {index + 1}!!! expected {numerical.answer()}, actual {ps_answer}."
+                f"PS 失败 {index + 1}!!! 预期 {problem.answer()}, 实际 {ps_answer}."
             )
-        # test zs_solver
-        zs_solver.set_problem(numerical.problem())
-        zs_answer = zs_solver.solve_numerical()
-        if number_equal(zs_answer, numerical.answer()):
+
+        # 测试 zs_solver
+        zs_solver.set_problem(problem.problem())
+        zs_answer = (
+            zs_solver.solve_numerical()
+            if is_numerical
+            else zs_solver.solve_multichoice(problem.options())
+        )
+        if (is_numerical and number_equal(zs_answer, problem.answer())) or (
+            not is_numerical and zs_answer.lower() == problem.answer().lower()
+        ):
             zs_correct_cnt += 1
         else:
             logger.warning(
-                f"ZS failed {index + 1}!!! expected {numerical.answer()}, actual {zs_answer}."
+                f"ZS 失败 {index + 1}!!! 预期 {problem.answer()}, 实际 {zs_answer}."
             )
+
         logger.info(
-            f"On {index + 1} case, PS correct {ps_correct_cnt} and ZS correct {zs_correct_cnt}."
+            f"在第 {index + 1} 个案例中，PS 正确 {ps_correct_cnt} 个，ZS 正确 {zs_correct_cnt} 个。"
         )
 
-    logger.info(f"PS Solver accuracy: {ps_correct_cnt / tot_cnt}")
-    logger.info(f"ZS Solver accuracy: {zs_correct_cnt / tot_cnt}")
+    logger.info(f"PS 求解器准确率: {ps_correct_cnt / tot_cnt}")
+    logger.info(f"ZS 求解器准确率: {zs_correct_cnt / tot_cnt}")
 
 
 def evaluate_multichoice(
-    file_path: str, model: Type[T], length_limit: int = None, model_name: str = None
+    input_file_path: str,
+    model: Type[T],
+    length_limit: int = None,
+    model_name: str = None,
 ):
     """
     Evaluate the accuracy of Dataset who's multi-choice
     """
-    dataset = load_jsonl(file_path, model, length_limit)
+    dataset = load_jsonl(input_file_path, model, length_limit)
     tot_cnt = len(dataset)
     ps_solver = PSCoTSolver(model_name=model_name)
     ps_correct_cnt = 0
@@ -110,21 +137,6 @@ def evaluate_multichoice(
     logger.info(f"ZS Solver accuracy: {zs_correct_cnt / tot_cnt}")
 
 
-def evaluate_add_sub(model_name: str = None):
-    """Evaluate AddSub Dataset"""
-    evaluate_numerical("./dataset/AddSub.json", AddSub, model_name=model_name)
-
-
-def evaluate_gsm8k(model_name: str = None):
-    """Evaluate GSM8K Dataset"""
-    evaluate_numerical("./dataset/gsm8k.json", GSM8K, model_name=model_name)
-
-
-def evaluate_aqua(model_name: str = None):
-    """Evaluate AQuA Dataset"""
-    evaluate_multichoice("./dataset/AQuA.jsonl", AQuA, model_name=model_name)
-
-
 # Below are main logic
 
 
@@ -140,7 +152,7 @@ def build_args() -> argparse.Namespace:
     parser.add_argument(
         "--solver",
         type=str,
-        help="需要测试的Solver名",
+        help="需要测试的Solver",
         required=True,
         choices=solver_names,
     )
@@ -162,11 +174,14 @@ if __name__ == "__main__":
         "AQuA": AQuA,
     }
     logger_file = f"./logs/{args.solver}_{args.dataset}.log"
+    logger.remove()
     logger.add(logger_file)
-    if args.dataset == "AddSub" or args.dataset == "GSM8K":
-        evaluate_numerical(
-            f"./dataset/{args.dataset}.json",
-            dataset_class_map[args.dataset],
-        )
-    elif args.dataset == "AQuA":
-        evaluate_multichoice("./dataset/AQuA.jsonl", AQuA)
+
+    file_path = f"./dataset/{args.dataset}.{'json' if args.dataset in ['AddSub', 'GSM8K'] else 'jsonl'}"
+    is_numerical = args.dataset in ["AddSub", "GSM8K"]
+
+    evaluate_problem(
+        file_path=file_path,
+        dataset=dataset_class_map[args.dataset],
+        is_numerical=is_numerical,
+    )
