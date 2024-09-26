@@ -46,13 +46,16 @@ class MultiChoiceProblem(Problem):
 T = TypeVar("T", bound=Problem)
 
 
-def load_json(file_path: str, model: Type[T], length_limit: int = None) -> list[T]:
+def load_json(
+    file_path: str, model: Type[T], range_arg: range | None = None
+) -> list[T]:
     """
     Load a file which is a large json array and return a list of model instances.
 
     Parameters:
     - file_path: The path to the JSON file.
     - model: The Pydantic model class to use for validation.
+    - range_arg: The range of the problems to be loaded.
 
     Returns:
     - A list of model instances.
@@ -65,13 +68,25 @@ def load_json(file_path: str, model: Type[T], length_limit: int = None) -> list[
             item = model(**item_data)
             data_list.append(item)
 
-    if length_limit:
-        return data_list[:length_limit]
+    if range_arg is not None:
+        return [data_list[i] for i in range_arg]
     return data_list
 
 
-def load_jsonl(file_path: str, model: Type[T], length_limit: int = None) -> list[T]:
-    """Similar"""
+def load_jsonl(
+    file_path: str, model: Type[T], range_arg: range | None = None
+) -> list[T]:
+    """
+    Load a JSONL file and return a list of model instances.
+
+    Parameters:
+    - file_path: The path to the JSONL file.
+    - model: The Pydantic model class to use for validation.
+    - range_arg: The range of the problems to be loaded.
+
+    Returns:
+    - A list of model instances.
+    """
     data_list = []
     with open(file_path, "r", encoding="utf-8") as file:
         json_list = list(file)
@@ -79,8 +94,9 @@ def load_jsonl(file_path: str, model: Type[T], length_limit: int = None) -> list
         item_data = json.loads(line)
         item = model(**item_data)
         data_list.append(item)
-    if length_limit:
-        return data_list[:length_limit]
+
+    if range_arg:
+        return [data_list[i] for i in range_arg]
     return data_list
 
 

@@ -1,7 +1,0 @@
-2024-09-26 17:45:40.199 | INFO     | __main__:evaluate_problem:56 - 正在运行第 1 个案例... 共 395 个
-2024-09-26 17:45:46.361 | INFO     | __main__:evaluate_problem:90 - 在第 1 个案例中，PS 正确 1 个，ZS 正确 1 个。
-2024-09-26 17:45:46.361 | INFO     | __main__:evaluate_problem:56 - 正在运行第 2 个案例... 共 395 个
-2024-09-26 17:45:51.906 | INFO     | __main__:evaluate_problem:90 - 在第 2 个案例中，PS 正确 2 个，ZS 正确 2 个。
-2024-09-26 17:45:51.907 | INFO     | __main__:evaluate_problem:56 - 正在运行第 3 个案例... 共 395 个
-2024-09-26 17:45:57.169 | INFO     | __main__:evaluate_problem:90 - 在第 3 个案例中，PS 正确 3 个，ZS 正确 3 个。
-2024-09-26 17:45:57.169 | INFO     | __main__:evaluate_problem:56 - 正在运行第 4 个案例... 共 395 个
