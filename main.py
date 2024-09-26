@@ -2,7 +2,9 @@
 Main entry for the project
 """
 
+import threading
 import argparse
+import itertools
 from loguru import logger
 from evaluate import evaluate_dataset
 from solver import ZSCoTSolver, PSCoTSolver, GiveAListSolver
@@ -41,6 +43,7 @@ def build_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--solver",
+        nargs="+",
         type=str,
         help="Solver to be tested",
         required=True,
@@ -48,6 +51,7 @@ def build_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--dataset",
+        nargs="+",
         type=str,
         help="Dataset to be tested",
         required=True,
@@ -76,25 +80,39 @@ def main():
         "plan_and_solve": PSCoTSolver,
         "give_a_list": GiveAListSolver,
     }
-    logger_file = f"./logs/{args.solver}_{args.dataset}.log"
+
+    solvers = args.solver
+    datasets = args.dataset
+    group = itertools.product(solvers, datasets)  # cartesian product
     logger.remove()
-    logger.add(logger_file)
-
-    file_path = f"./dataset/{args.dataset}.{'json' if args.dataset in ['AddSub', 'GSM8K'] else 'jsonl'}"
-    is_numerical = args.dataset in ["AddSub", "GSM8K"]
-
+    threads = []
     range_arg = args.range
 
-    if range_arg is None and args.dataset == "GSM8K":
-        range_arg = range(0, 400)
+    for solver, dataset in group:
+        logger_file = f"./logs/{solver}_{dataset}.log"
+        logger.add(logger_file)
+        file_path = f"./dataset/{dataset}.{'json' if dataset in ['AddSub', 'GSM8K'] else 'jsonl'}"
+        is_numerical = dataset in ["AddSub", "GSM8K"]
 
-    evaluate_dataset(
-        file_path=file_path,
-        dataset=dataset_class_map[args.dataset],
-        solver=solver_class_map[args.solver],
-        range_arg=range_arg,
-        is_numerical=is_numerical,
-    )
+        if range_arg is None and dataset == "GSM8K":
+            range_arg = range(0, 400)
+
+        evaluation_thread = threading.Thread(
+            target=evaluate_dataset,
+            kwargs={
+                "file_path": file_path,
+                "dataset": dataset_class_map[dataset],
+                "solver": solver_class_map[solver],
+                "range_arg": range_arg,
+                "is_numerical": is_numerical,
+            },
+        )
+        threads.append(evaluation_thread)
+        evaluation_thread.start()
+        print(f"Starting evaluation for {solver} on {dataset}")
+
+    for thread in threads:
+        thread.join()
 
 
 if __name__ == "__main__":
