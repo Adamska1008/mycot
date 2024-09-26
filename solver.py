@@ -125,12 +125,64 @@ class PSCoTSolver(CoTSolver):
         return self.agent.post_ai(COT_AI_PROMPT)
 
 
+class GiveAListSolver(CoTSolver):
+    """
+    Prompot the agent to give a list of steps to solve the problem
+    """
+
+    def __init__(self, problem: str = None, model_name: str = None):
+        self._problem = problem
+        self._agent = ChatAgent(
+            system_prompt=(
+                "You should give a list of steps to solve the problem, from 1 to N steps."
+                "Each step should start with a number and a dot, like '1. '."
+                "The steps should be as detailed as possible, and each step should be a complete sentence."
+                "The last step should be the answer."
+            ),
+            model_name=model_name,
+        )
+
+    @property
+    def agent(self):
+        return self._agent
+
+    def set_problem(self, problem: str):
+        """
+        Simple Setter
+        """
+        self._problem = problem
+
+    def solve(self) -> str:
+        """
+        Prompt the agent to give a list of steps to solve the problem
+        """
+        self.agent.clear_history()
+        self.agent.store_human(self._problem)
+        return self.agent.post_ai(
+            "Ok, I will think step by step and give you a list of steps to solve the problem.\n"
+            "1. "
+        )
+
+
 if __name__ == "__main__":
-    solver = ZSCoTSolver(
+    print("===========Explicitly require a list=============")
+    list_solver = GiveAListSolver(
         problem=(
-            "Grace weighs 125 pounds. Alex weighs 2 pounds less than 4 times what Graces weighs."
-            "What are theire combined weights in pounds?"
+            "A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower."
+            "The top of the tower is observed from the car and, in the process,"
+            "it takes 10 minutes for the angle of elevation to change from 45\u00b0 to 60\u00b0."
+            "After how much more time will this car reach the base of the tower?"
         )
     )
-
-    print(solver.solve_numerical())
+    print(list_solver.solve())
+    print()
+    print("===========Let's think step by step=============")
+    zs_solver = ZSCoTSolver(
+        problem=(
+            "A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower."
+            "The top of the tower is observed from the car and, in the process,"
+            "it takes 10 minutes for the angle of elevation to change from 45\u00b0 to 60\u00b0."
+            "After how much more time will this car reach the base of the tower?"
+        )
+    )
+    print(zs_solver.solve())

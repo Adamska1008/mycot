@@ -123,7 +123,6 @@ def evaluate_aqua(model_name: str = None):
     """Evaluate AQuA Dataset"""
     evaluate_multichoice("./dataset/AQuA.jsonl", AQuA, model_name=model_name)
 
-
 if __name__ == "__main__":
-    logger.add("gsm8k-llama3.log", level="INFO")
-    evaluate_aqua(model_name="llama3:8b")
+    logger.add("output.log", level="INFO")
+    evaluate_aqua()
