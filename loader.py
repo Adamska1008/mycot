@@ -13,8 +13,9 @@ class Problem(ABC, BaseModel):
     Interface of a problem BaseModel
     """
 
+    @classmethod
     @abstractmethod
-    def dataset_name() -> str:
+    def name(cls) -> str:
         """
         Dataset name of the problem class
         """
@@ -106,8 +107,9 @@ class AddSub(Problem):
     def answer(self) -> str:
         return self.lSolutions[0]
 
-    def name() -> str:
-        return "AddSub" 
+    @classmethod
+    def name(cls) -> str:
+        return "AddSub"
 
 
 class GSM8K(Problem):
@@ -123,8 +125,9 @@ class GSM8K(Problem):
 
     def answer(self) -> str:
         return str(self.raw_answer)
-    
-    def name() -> str:
+
+    @classmethod
+    def name(cls) -> str:
         return "GSM8K"
 
 
@@ -144,7 +147,8 @@ class AQuA(MultiChoiceProblem):
     def answer(self) -> str:
         return self.correct
 
-    def name() -> str:
+    @classmethod
+    def name(cls) -> str:
         return "AQuA"
 
     def options(self) -> dict[str, str]:

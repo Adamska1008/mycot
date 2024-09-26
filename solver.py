@@ -3,9 +3,7 @@ Codes related to CoTSolver
 """
 
 from abc import ABC, abstractmethod
-import argparse
 from agent import ChatAgent
-from loader import AQuA, AddSub, GSM8K
 
 COT_AI_PROMPT = (
     "Let's first understand the problem, extract relevant variables and their corresponding numerals,"
@@ -35,8 +33,9 @@ class CoTSolver(ABC):
         get the agent
         """
 
+    @classmethod
     @abstractmethod
-    def name() -> str:
+    def name(cls) -> str:
         """
         name of the cot strategy
         will be used in command line argument
@@ -85,7 +84,8 @@ class ZSCoTSolver(CoTSolver):
     def agent(self):
         return self._agent
 
-    def name() -> str:
+    @classmethod
+    def name(cls) -> str:
         return "zero_shot"
 
     def set_problem(self, probelm: str) -> None:
@@ -119,7 +119,8 @@ class PSCoTSolver(CoTSolver):
     def agent(self):
         return self._agent
 
-    def name() -> str:
+    @classmethod
+    def name(cls) -> str:
         return "plan_and_solve"
 
     def set_problem(self, problem: str):
@@ -161,7 +162,8 @@ class GiveAListSolver(CoTSolver):
     def agent(self):
         return self._agent
 
-    def name():
+    @classmethod
+    def name(cls) -> str:
         return "give_a_list"
 
     def set_problem(self, problem: str):
@@ -180,12 +182,3 @@ class GiveAListSolver(CoTSolver):
             "Ok, I will think step by step and give you a list of steps to solve the problem.\n"
             "1. "
         )
-
-
-if __name__ == "__main__":
-    solver_names = [cls.name() for cls in  [ZSCoTSolver, PSCoTSolver, GiveAListSolver]]
-    dataset_names = [cls.name() for cls in [AQuA, AddSub, GSM8K]]
-    parser = argparse.ArgumentParser(description="使用这个脚本来快速测试某个Solver解决数据集中某一个题目的效果")
-    parser.add_argument("--solver", type=str, help="需要测试的Solver名", required=True, choices=solver_names)
-    parser.add_argument("--dataset", type=str, help="需要测试的数据集", required=True, choices=dataset_names)
-    args = parser.parse_args()

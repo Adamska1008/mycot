@@ -3,6 +3,7 @@ Doing evaluate stuff
 """
 
 from typing import Type, TypeVar
+import argparse
 from loguru import logger
 from loader import (
     load_json,
@@ -13,7 +14,7 @@ from loader import (
     GSM8K,
     AQuA,
 )
-from solver import PSCoTSolver, ZSCoTSolver
+from solver import PSCoTSolver, ZSCoTSolver, GiveAListSolver
 
 T = TypeVar("T", bound=Problem)
 M = TypeVar("M", bound=MultiChoiceProblem)
@@ -31,12 +32,12 @@ def number_equal(lhs: str, rhs: str) -> bool:
 
 
 def evaluate_numerical(
-    file_path: str, model: Type[T], length_limit: int = None, model_name: str = None
+    file_path: str, dataset: Type[T], length_limit: int = None, model_name: str = None
 ):
     """
     Evaluate the accuracy of Dataset who's numerical
     """
-    dataset = load_json(file_path, model, length_limit)
+    dataset = load_json(file_path, dataset, length_limit)
     tot_cnt = len(dataset)
     ps_solver = PSCoTSolver(model_name=model_name)
     ps_correct_cnt = 0
@@ -123,6 +124,49 @@ def evaluate_aqua(model_name: str = None):
     """Evaluate AQuA Dataset"""
     evaluate_multichoice("./dataset/AQuA.jsonl", AQuA, model_name=model_name)
 
+
+# Below are main logic
+
+
+def build_args() -> argparse.Namespace:
+    """
+    Build args for evaluate
+    """
+    solver_names = [cls.name() for cls in [ZSCoTSolver, PSCoTSolver, GiveAListSolver]]
+    dataset_names = [cls.name() for cls in [AQuA, AddSub, GSM8K]]
+    parser = argparse.ArgumentParser(
+        description="使用这个脚本来快速测试某个Solver解决数据集中某一个题目的效果"
+    )
+    parser.add_argument(
+        "--solver",
+        type=str,
+        help="需要测试的Solver名",
+        required=True,
+        choices=solver_names,
+    )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        help="需要测试的数据集",
+        required=True,
+        choices=dataset_names,
+    )
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
-    logger.add("output.log", level="INFO")
-    evaluate_aqua()
+    args = build_args()
+    dataset_class_map = {
+        "AddSub": AddSub,
+        "GSM8K": GSM8K,
+        "AQuA": AQuA,
+    }
+    logger_file = f"./logs/{args.solver}_{args.dataset}.log"
+    logger.add(logger_file)
+    if args.dataset == "AddSub" or args.dataset == "GSM8K":
+        evaluate_numerical(
+            f"./dataset/{args.dataset}.json",
+            dataset_class_map[args.dataset],
+        )
+    elif args.dataset == "AQuA":
+        evaluate_multichoice("./dataset/AQuA.jsonl", AQuA)
