@@ -2,11 +2,15 @@
 codes related to Agent
 """
 
+from loguru import logger
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
 
-from langchain_core.chat_history import BaseChatMessageHistory, InMemoryChatMessageHistory
+from langchain_core.chat_history import (
+    BaseChatMessageHistory,
+    InMemoryChatMessageHistory,
+)
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
@@ -88,7 +92,14 @@ class ChatAgent:
         """post based on current history"""
         return self.chain.invoke({"messages": []}, config=self.config)
 
+    def debug(self) -> None:
+        """debug the current history"""
+        session_id: str = self.config["configurable"]["session_id"]
+        history = self.__get_session_history(session_id)
+        logger.debug(history.messages)
+
 
 if __name__ == "__main__":
     openai = ChatAgent()
     print(openai.post_human("Hello!"))
+    openai.debug()

@@ -58,6 +58,9 @@ def build_args() -> argparse.Namespace:
         choices=dataset_names,
     )
     parser.add_argument(
+        "--debug", action="store_true", help="set logger to debug level"
+    )
+    parser.add_argument(
         "--range",
         type=parse_range,
         help="Range of the problems to be tested",
@@ -90,7 +93,7 @@ def main():
 
     for solver, dataset in group:
         logger_file = f"./logs/{solver}_{dataset}.log"
-        logger.add(logger_file)
+        logger.add(logger_file, level="DEBUG" if args.debug else "INFO")
         file_path = f"./dataset/{dataset}.{'json' if dataset in ['AddSub', 'GSM8K'] else 'jsonl'}"
         is_numerical = dataset in ["AddSub", "GSM8K"]
 
