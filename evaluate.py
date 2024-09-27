@@ -49,7 +49,7 @@ def evaluate_dataset(
     """
     dataset = (
         load_json(file_path, dataset, range_arg=range_arg)
-        if is_numerical
+        if dataset.file_format() == "json"
         else load_jsonl(file_path, dataset, range_arg=range_arg)
     )
     tot_cnt = len(dataset)

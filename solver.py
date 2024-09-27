@@ -26,6 +26,13 @@ class CoTSolver(ABC):
             - the final answer
         """
 
+    @abstractmethod
+    def set_problem(str):
+        """
+        Set the problem description to be solved.
+        NOTICE: The options should not be contained if it's a multiple choices problem.
+        """
+
     @property
     @abstractmethod
     def agent(self):

@@ -25,6 +25,14 @@ class Problem(ABC, BaseModel):
         Give the answer of the problem
         """
 
+    @classmethod
+    @abstractmethod
+    def file_format(cls) -> str:
+        """
+        File format which the problem stored as.
+        Available: json, jsonl.
+        """
+
 
 class MultiChoiceProblem(Problem):
     """
@@ -115,6 +123,10 @@ class AddSub(Problem):
 
     def answer(self) -> str:
         return self.lSolutions[0]
+    
+    @classmethod
+    def file_format(cls) -> str:
+        return "json"
 
 
 class GSM8K(Problem):
@@ -130,6 +142,10 @@ class GSM8K(Problem):
 
     def answer(self) -> str:
         return str(self.raw_answer)
+    
+    @classmethod
+    def file_format(cls) -> str:
+        return "json"
 
 
 class AQuA(MultiChoiceProblem):
@@ -156,3 +172,7 @@ class AQuA(MultiChoiceProblem):
                 option = option[2:]
             res[letter] = option
         return res
+
+    @classmethod
+    def file_format(cls) -> str:
+        return "jsonl"

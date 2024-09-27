@@ -4,7 +4,7 @@ My implementation of some Chain-of-Thought solver. Currently implement zero-shot
 
 ## Usage
 
-`main.py` is the script to run. Run `python main.py -h` and you will see:
+`main.py` is the script to run. Run `python main.py -h` to see available options:
 
 ```
 usage: main.py [-h] --solver {zero_shot,plan_and_solve,give_a_list} [{zero_shot,plan_and_solve,give_a_list} ...] --dataset {AddSub,GSM8K,AQuA} [{AddSub,GSM8K,AQuA} ...] [--debug] [--range RANGE]
@@ -21,17 +21,17 @@ options:
   --range RANGE         Range of the problems to be tested
 ```
 
-For example, run `python main.py --solver zero_shot --dataset AddSub` will run the zero-shot solver(which use prompt "let's think step by step") on AddSub dataset. 
+For example, run `python main.py --solver zero_shot --dataset AddSub` will execute the zero-shot solver(using prompt "let's think step by step") on the AddSub dataset. 
 
 ### Run Multi-Tests at the same time
 
-The `solver` and `dataset` arguments accept multiple inputs. If you give so, the script will make a cartesian product on the two list and run all the tests with multi-thread. The output will be stored to `./logs/${solver}_${dataset}.log`. For example, run with
+The `solver` and `dataset` arguments accept multiple inputs. If you provide so, the script will create a cartesian product of the two lists and run all tests concurrently. The output will be stored to `./logs/${solver}_${dataset}.log`. For example, running
 
 ```sh
 python main.py --solver zero_shot plan_and_solve --dataset AddSub AQuA
 ```
 
-will run four threads, which are
+will initiate four threads, which are
 
 ```
 (zero_shot, AddSub)
@@ -42,13 +42,112 @@ will run four threads, which are
 
 ### `--range`
 
-The `--range` accepts a range argument in format of `start,end` (`end` not included) or `index`. For example, run
+The `--range` argument accepts a range argument in format of `start,end` (`end` not included) or a single `index`. For example, run
 
 ```sh
 python main.py --solver zero_shot --dataset AddSub --range 2,3 # or --range 2
 ```
 
 will test the problem with index `2` in AddSub dataset. 
+
+### Extensibility
+
+To add new datasets or CoTSolver, you will need to modify the code. It includes add new classes and change the codes related to arg-parse in `main.py`.
+
+#### Adding a dataset
+
+Currently the script supports loading data from JSON or JSONL files. Place your dataset file at `dataset` directory and create a new class in `loader.py`. It should implement `Problem` ABC if the answer is a number. It should implement `MultiChoiceProblem` if the answer is an option.
+
+For example:
+
+```python
+class AddSub(Problem):
+    """
+    model of a problem from AddSub dataset
+    """
+
+    iIndex: int
+    lEquations: list[str]
+    lSolutions: list[str]
+    sQuestion: str
+
+    def problem(self) -> str:
+        return self.sQuestion
+
+    def answer(self) -> str:
+        return self.lSolutions[0]
+    
+    @classmethod
+    def file_format(cls) -> str:
+        return "json"
+```
+
+```python
+class AQuA(MultiChoiceProblem):
+    """
+    model of a problem from AQuA dataset
+    """
+
+    question: str
+    raw_options: list[str] = Field(alias="options")
+    rationale: str
+    correct: str
+
+    def problem(self) -> str:
+        return self.question
+
+    def answer(self) -> str:
+        return self.correct
+
+    def options(self) -> dict[str, str]:
+        res = {}
+        for index, option in enumerate(self.raw_options):
+            letter = chr(index + 65)
+            while option.startswith(f"{letter}("):
+                option = option[2:]
+            res[letter] = option
+        return res
+
+    @classmethod
+    def file_format(cls) -> str:
+        return "jsonl"
+```
+
+#### Adding a Solver
+
+Create a new class in `solver.py`. It should implement the `CoTSolver` class. For example:
+
+```python
+class ZSCoTSolver(CoTSolver):
+    """
+    Wraps an agent and use zero-shot CoT to solve a problem(usually math).
+    """
+
+    def __init__(self, problem: str = None, model_name: str = None):
+        self._problem = problem
+        self._agent = ChatAgent(model_name=model_name)
+
+    @property
+    def agent(self):
+        return self._agent
+
+    def set_problem(self, probelm: str) -> None:
+        """
+        Simple Setter
+        """
+        self._problem = probelm
+
+    def solve(self) -> str:
+        """
+        Solve the problem.
+
+        Returns:
+            - a number indicates the final answer
+        """
+        self.agent.clear_history()
+        self.agent.store_human(self._problem)
+        return self.agent.post_ai("Let's think step by step.")
+```
 
 ## Dependencies
 
