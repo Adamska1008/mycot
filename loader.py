@@ -4,9 +4,14 @@ Load the dataset
 
 import json
 from typing import TypeVar, Type
+from enum import Enum
 from abc import ABC, abstractmethod
 from pydantic import BaseModel, Field
 
+class AnswerType(Enum):
+    Number = 1
+    Option = 2
+    Boolean = 3
 
 class Problem(ABC, BaseModel):
     """
@@ -23,6 +28,12 @@ class Problem(ABC, BaseModel):
     def answer(self) -> str:
         """
         Give the answer of the problem
+        """
+
+    @classmethod
+    @abstractmethod
+    def answer_type(cls) -> AnswerType:
+        """
         """
 
     @classmethod
@@ -128,6 +139,9 @@ class AddSub(Problem):
     def file_format(cls) -> str:
         return "json"
 
+    @classmethod
+    def answer_type(cls) -> AnswerType:
+        return AnswerType.Number
 
 class GSM8K(Problem):
     """
@@ -147,6 +161,31 @@ class GSM8K(Problem):
     def file_format(cls) -> str:
         return "json"
 
+    @classmethod
+    def answer_type(cls) -> AnswerType:
+        return AnswerType.Number
+
+class CoinFlip(Problem):
+    """
+    model of a problem from CoinClip dataset
+    """
+    targets: list[int]
+    target: str
+    inputs: str
+
+    def problem(self) -> str:
+        return self.question
+    
+    def answer(self) -> str:
+        return self.target
+    
+    @classmethod
+    def file_format(cls) -> str:
+        return "json"
+    
+    @classmethod
+    def answer_type(cls) -> AnswerType:
+        return AnswerType.Boolean
 
 class AQuA(MultiChoiceProblem):
     """
@@ -176,3 +215,7 @@ class AQuA(MultiChoiceProblem):
     @classmethod
     def file_format(cls) -> str:
         return "jsonl"
+    
+    @classmethod
+    def answer_type(cls) -> AnswerType:
+        return AnswerType.Option

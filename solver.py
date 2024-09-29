@@ -11,7 +11,6 @@ COT_AI_PROMPT = (
     "(pay attention to calculation and common sense), solve the problem step by step, and show the answer."
 )
 
-
 class CoTSolver(ABC):
     """
     Chain-of-Thought Solver
@@ -27,7 +26,7 @@ class CoTSolver(ABC):
         """
 
     @abstractmethod
-    def set_problem(str):
+    def set_problem(self, str):
         """
         Set the problem description to be solved.
         NOTICE: The options should not be contained if it's a multiple choices problem.
@@ -69,6 +68,17 @@ class CoTSolver(ABC):
             "Please do not use bold formatting in your output."
         )
 
+    def solve_boolean(self, boolean_expression: tuple[str, str]):
+        """
+        Args:
+            boolean_expression: two str in a tuple, presenting true and false. e.g. ["True", "False"]
+        """
+        self.solve()
+        return self.post_human(
+            "Decide the answer to the problem to be true or false."
+            f"If you think it's true, output {boolean_expression[0]},"
+            f"else output {boolean_expression[1]}"
+        )
 
 class ZSCoTSolver(CoTSolver):
     """

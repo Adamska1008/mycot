@@ -114,7 +114,6 @@ class AQuA(MultiChoiceProblem):
 ```
 
 #### Adding a Solver
-
 Create a new class in `solver.py`. It should implement the `CoTSolver` class. For example:
 
 ```python
@@ -166,6 +165,12 @@ ollama pull llama3
 ```sh
 pip install -r requirements.txt
 ```
+
+## Dataset
+
+### Coin Flip
+
+[skirishna/coin_flip](https://huggingface.co/datasets/skrishna/coin_flip/) from hugging face.
 
 ## Conclusion
 

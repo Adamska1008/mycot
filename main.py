@@ -6,9 +6,10 @@ import threading
 import argparse
 import itertools
 from loguru import logger
+from typing import Type
 from evaluate import evaluate_dataset
-from solver import ZSCoTSolver, PSCoTSolver, GiveAListSolver
-from loader import AddSub, GSM8K, AQuA
+from solver import ZSCoTSolver, PSCoTSolver, GiveAListSolver, CoTSolver
+from loader import AddSub, GSM8K, AQuA, CoinFlip, Problem
 
 
 def parse_range(range_str: str) -> range:
@@ -37,7 +38,7 @@ def build_args() -> argparse.Namespace:
     Build args
     """
     solver_names = ["zero_shot", "plan_and_solve", "give_a_list"]
-    dataset_names = ["AddSub", "GSM8K", "AQuA"]
+    dataset_names = ["AddSub", "GSM8K", "AQuA", "CoinFlip"]
     parser = argparse.ArgumentParser(
         description="Use this script to quickly test the effect of a Solver solving a problem in the dataset"
     )
@@ -73,12 +74,7 @@ def main():
     Main function to avoid global namespace pollution.
     """
     args = build_args()
-    dataset_class_map = {
-        "AddSub": AddSub,
-        "GSM8K": GSM8K,
-        "AQuA": AQuA,
-    }
-    solver_class_map = {
+    solver_class_map: dict[str, Type[CoTSolver]] = {
         "zero_shot": ZSCoTSolver,
         "plan_and_solve": PSCoTSolver,
         "give_a_list": GiveAListSolver,
@@ -95,19 +91,20 @@ def main():
         logger_file = f"./logs/{solver}_{dataset}.log"
         logger.add(logger_file, level="DEBUG" if args.debug else "INFO")
         file_path = f"./dataset/{dataset}.{'json' if dataset in ['AddSub', 'GSM8K'] else 'jsonl'}"
-        is_numerical = dataset in ["AddSub", "GSM8K"]
 
         if range_arg is None and dataset == "GSM8K":
             range_arg = range(0, 400)
 
+        solver_cls = solver_class_map[solver]
+        dataset_cls: Type[Problem] = globals()[dataset]
         evaluation_thread = threading.Thread(
             target=evaluate_dataset,
             kwargs={
                 "file_path": file_path,
-                "dataset": dataset_class_map[dataset],
-                "solver": solver_class_map[solver],
+                "dataset": dataset_cls,
+                "solver": solver_cls,
                 "range_arg": range_arg,
-                "is_numerical": is_numerical,
+                "answer_type": dataset_cls.answer_type(),
             },
         )
         threads.append(evaluation_thread)
