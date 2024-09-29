@@ -5,11 +5,13 @@ Main entry for the project
 import threading
 import argparse
 import itertools
-from loguru import logger
 from typing import Type
 from evaluate import evaluate_dataset
 from solver import ZSCoTSolver, PSCoTSolver, GiveAListSolver, CoTSolver
 from loader import AddSub, GSM8K, AQuA, CoinFlip, Problem
+from logger import ThreadLogger
+
+logger = ThreadLogger()
 
 
 def parse_range(range_str: str) -> range:
@@ -83,20 +85,19 @@ def main():
     solvers = args.solver
     datasets = args.dataset
     group = itertools.product(solvers, datasets)  # cartesian product
-    logger.remove()
     threads = []
     range_arg = args.range
 
     for solver, dataset in group:
         logger_file = f"./logs/{solver}_{dataset}.log"
-        logger.add(logger_file, level="DEBUG" if args.debug else "INFO")
-        file_path = f"./dataset/{dataset}.{'json' if dataset in ['AddSub', 'GSM8K'] else 'jsonl'}"
 
         if range_arg is None and dataset == "GSM8K":
             range_arg = range(0, 400)
 
         solver_cls = solver_class_map[solver]
         dataset_cls: Type[Problem] = globals()[dataset]
+        file_path = f"./dataset/{dataset}.{dataset_cls.file_format()}"
+
         evaluation_thread = threading.Thread(
             target=evaluate_dataset,
             kwargs={
@@ -107,8 +108,14 @@ def main():
                 "answer_type": dataset_cls.answer_type(),
             },
         )
+
         threads.append(evaluation_thread)
         evaluation_thread.start()
+        logger.bind(
+            evaluation_thread.ident,
+            logger_file,
+            "DEBUG" if args.debug else "INFO",
+        )
         print(f"Starting evaluation for {solver} on {dataset}")
 
     for thread in threads:

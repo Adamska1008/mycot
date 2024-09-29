@@ -1,0 +1,9 @@
+2024-09-29 16:00:33.506 | INFO     | logger:info:42 - Running case 1... Total 20
+2024-09-29 16:00:36.364 | INFO     | logger:info:42 - In case 1, correct 1.
+2024-09-29 16:00:36.365 | INFO     | logger:info:42 - Running case 2... Total 20
+2024-09-29 16:00:39.194 | INFO     | logger:info:42 - In case 2, correct 2.
+2024-09-29 16:00:39.195 | INFO     | logger:info:42 - Running case 3... Total 20
+2024-09-29 16:00:42.236 | INFO     | logger:info:42 - In case 3, correct 3.
+2024-09-29 16:00:42.236 | INFO     | logger:info:42 - Running case 4... Total 20
+2024-09-29 16:00:44.795 | INFO     | logger:info:42 - In case 4, correct 4.
+2024-09-29 16:00:44.796 | INFO     | logger:info:42 - Running case 5... Total 20
