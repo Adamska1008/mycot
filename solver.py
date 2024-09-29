@@ -79,6 +79,7 @@ class CoTSolver(ABC):
             "Decide the answer to the problem to be true or false."
             f"If you think it's true, output {boolean_expression[0]},"
             f"else output {boolean_expression[1]}"
+            f"Do not output anything beside the judgment like f{boolean_expression[0]}."
         )
 
 
@@ -153,10 +154,13 @@ class GiveAListSolver(CoTSolver):
         self._problem = problem
         self._agent = ChatAgent(
             system_prompt=(
-                "You should give a list of steps to solve the problem, from 1 to N steps."
-                "Each step should start with a number and a dot, like '1. '."
-                "The steps should be as detailed as possible, and each step should be a complete sentence."
-                "The last step should be the answer."
+                "You are going to solve a problem. "
+                "First, you should extract variables and their corresponding numerals."
+                "Second, make a list. Each element of the list is a track of how these variables evolve."
+                "The variable and its corresponding numerals should be included in the list."
+                "After each manipulation in the problem, the variable may change(or not)."
+                "You should clearly describe how the variable changes in the list."
+                "Finally, the last element of the list should be the final answer of the problem."
             ),
             model_name=model_name,
         )

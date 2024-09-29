@@ -23,7 +23,7 @@ def answer_equal(answer: str, output: str, answer_type: AnswerType) -> bool:
     def num_equal(lhs: str, rhs: str) -> bool:
         eps = 1e-4
         try:
-            return abs(float(lhs, float(rhs))) < eps
+            return abs(float(lhs) - float(rhs)) < eps
         except ValueError:
             return False
 

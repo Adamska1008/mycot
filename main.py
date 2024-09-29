@@ -64,6 +64,11 @@ def build_args() -> argparse.Namespace:
         "--debug", action="store_true", help="set logger to debug level"
     )
     parser.add_argument(
+        "--model",
+        type=str,
+        help="Model to be tested",
+    )
+    parser.add_argument(
         "--range",
         type=parse_range,
         help="Range of the problems to be tested",
@@ -87,6 +92,7 @@ def main():
     group = itertools.product(solvers, datasets)  # cartesian product
     threads = []
     range_arg = args.range
+    model = args.model if args.model else "gpt-4o-mini"
 
     for solver, dataset in group:
         logger_file = f"./logs/{solver}_{dataset}.log"
@@ -106,6 +112,7 @@ def main():
                 "solver": solver_cls,
                 "range_arg": range_arg,
                 "answer_type": dataset_cls.answer_type(),
+                "model_name": model,
             },
         )
 

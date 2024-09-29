@@ -16,6 +16,7 @@ class ThreadLogger:
 
     _instance = None
     _logger = None
+    _lock = threading.Lock()
 
     def __new__(cls):
         if cls._instance is None:
@@ -28,29 +29,40 @@ class ThreadLogger:
         """
         Bind the log of a thread to a file path.
         """
-        self._logger.add(
-            path,
-            filter=lambda record: record["extra"].get("thread") == thread_id,
-            level=level,
-        )
+        with self._lock:
+            self._logger.add(
+                path,
+                filter=lambda record: record["extra"].get("thread") == thread_id,
+                level=level,
+            )
 
     def info(self, message: str, *args, **kwargs) -> None:
         """
         Log an info message.
         """
-        tid = threading.current_thread().ident
-        self._logger.bind(thread=tid).info(message, *args, **kwargs)
+        with self._lock:
+            tid = threading.current_thread().ident
+            self._logger.bind(thread=tid).info(message, *args, **kwargs)
 
     def debug(self, message: str, *args, **kwargs) -> None:
         """
         Log a debug message.
         """
-        tid = threading.current_thread().ident
-        self._logger.bind(thread=tid).debug(message, *args, **kwargs)
+        with self._lock:
+            tid = threading.current_thread().ident
+            self._logger.bind(thread=tid).debug(message, *args, **kwargs)
 
     def warning(self, message: str, *args, **kwargs) -> None:
         """
         Log a warning message.
         """
-        tid = threading.current_thread().ident
-        self._logger.bind(thread=tid).warning(message, *args, **kwargs)
+        with self._lock:
+            tid = threading.current_thread().ident
+            self._logger.bind(thread=tid).warning(message, *args, **kwargs)
+
+    def remove(self) -> None:
+        """
+        Remove the logger.
+        """
+        with self._lock:
+            self._logger.remove()
