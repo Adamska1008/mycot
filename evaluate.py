@@ -2,17 +2,13 @@
 Doing evaluate stuff
 """
 
-from enum import Enum
 from typing import Type, TypeVar
-from loguru import logger
-from loader import (
-    load_json,
-    load_jsonl,
-    Problem,
-    MultiChoiceProblem,
-    AnswerType
-)
+from loader import load_json, load_jsonl, Problem, MultiChoiceProblem, AnswerType
 from solver import CoTSolver
+from logger import ThreadLogger
+
+logger = ThreadLogger()
+
 
 T = TypeVar("T", bound=Problem)
 M = TypeVar("M", bound=MultiChoiceProblem)
@@ -20,21 +16,25 @@ S = TypeVar("S", bound=CoTSolver)
 
 
 def answer_equal(answer: str, output: str, answer_type: AnswerType) -> bool:
+    """
+    Check if the answer is equal to the output
+    """
+
     def num_equal(lhs: str, rhs: str) -> bool:
         eps = 1e-4
         try:
-            return abs(float(lhs, float(rhs))) < eps
+            return abs(float(lhs) - float(rhs)) < eps
         except ValueError:
             return False
 
     def option_equal(lhs: str, rhs: str) -> bool:
         return lhs.lower() == rhs.lower()
-    
+
     def boolean_equal(lhs: str, rhs: str) -> bool:
         """
         Assuming answer is yes or no. May change in the future.
         """
-        return lhs.lower() == rhs.lower()
+        return lhs.strip(".").lower() == rhs.strip(".").lower()
 
     if answer_type is AnswerType.Number:
         return num_equal(answer, output)
@@ -83,7 +83,7 @@ def evaluate_dataset(
         elif answer_type is AnswerType.Option:
             output = cot_solver.solve_multichoice(problem.options())
         elif answer_type is AnswerType.Boolean:
-            output = cot_solver.solve_boolean()
+            output = cot_solver.solve_boolean(["yes", "no"])
         else:
             assert False
         answer = problem.answer()
@@ -91,8 +91,9 @@ def evaluate_dataset(
             correct_cnt += 1
         else:
             logger.warning(
-                f"Solving failed {index + 1}!!! Expected {problem.answer()}, Got {answer}."
+                f"Solving failed {index + 1}!!! Expected {answer}, Got {output}."
             )
+            cot_solver.agent.debug()
 
         logger.info(f"In case {index + 1}, correct {correct_cnt}.")
 

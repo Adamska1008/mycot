@@ -8,10 +8,16 @@ from enum import Enum
 from abc import ABC, abstractmethod
 from pydantic import BaseModel, Field
 
+
 class AnswerType(Enum):
+    """
+    Enum of the answer type
+    """
+
     Number = 1
     Option = 2
     Boolean = 3
+
 
 class Problem(ABC, BaseModel):
     """
@@ -33,8 +39,7 @@ class Problem(ABC, BaseModel):
     @classmethod
     @abstractmethod
     def answer_type(cls) -> AnswerType:
-        """
-        """
+        """ """
 
     @classmethod
     @abstractmethod
@@ -134,7 +139,7 @@ class AddSub(Problem):
 
     def answer(self) -> str:
         return self.lSolutions[0]
-    
+
     @classmethod
     def file_format(cls) -> str:
         return "json"
@@ -142,6 +147,7 @@ class AddSub(Problem):
     @classmethod
     def answer_type(cls) -> AnswerType:
         return AnswerType.Number
+
 
 class GSM8K(Problem):
     """
@@ -156,7 +162,7 @@ class GSM8K(Problem):
 
     def answer(self) -> str:
         return str(self.raw_answer)
-    
+
     @classmethod
     def file_format(cls) -> str:
         return "json"
@@ -165,27 +171,30 @@ class GSM8K(Problem):
     def answer_type(cls) -> AnswerType:
         return AnswerType.Number
 
+
 class CoinFlip(Problem):
     """
     model of a problem from CoinClip dataset
     """
-    targets: list[int]
-    target: str
+
+    targets_vec: list[int]
+    targets: str
     inputs: str
 
     def problem(self) -> str:
-        return self.question
-    
+        return self.inputs
+
     def answer(self) -> str:
-        return self.target
-    
+        return self.targets
+
     @classmethod
     def file_format(cls) -> str:
         return "json"
-    
+
     @classmethod
     def answer_type(cls) -> AnswerType:
         return AnswerType.Boolean
+
 
 class AQuA(MultiChoiceProblem):
     """
@@ -215,7 +224,7 @@ class AQuA(MultiChoiceProblem):
     @classmethod
     def file_format(cls) -> str:
         return "jsonl"
-    
+
     @classmethod
     def answer_type(cls) -> AnswerType:
         return AnswerType.Option

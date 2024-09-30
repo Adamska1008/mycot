@@ -2,7 +2,6 @@
 codes related to Agent
 """
 
-from loguru import logger
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
@@ -14,6 +13,9 @@ from langchain_core.chat_history import (
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
+from logger import ThreadLogger
+
+logger = ThreadLogger()
 
 
 class ChatAgent:
@@ -31,13 +33,10 @@ class ChatAgent:
         return cls.__store[session_id]
 
     def __init__(self, system_prompt: str = None, model_name: str = "gpt-4o-mini"):
-        if model_name is None or model_name == "gpt-4o-mini":
-            model = ChatOpenAI(model="gpt-4o-mini")
-        elif model_name == "llama3:8b":
+        if model_name == "llama3:8b":
             model = ChatOllama(model="llama3:8b")
         else:
-            assert f"{model_name} not support"
-
+            model = ChatOpenAI(model=model_name)
         if system_prompt:
             prompt = ChatPromptTemplate.from_messages(
                 [
@@ -96,10 +95,15 @@ class ChatAgent:
         """debug the current history"""
         session_id: str = self.config["configurable"]["session_id"]
         history = self.__get_session_history(session_id)
-        logger.debug(history.messages)
+        for msg in history.messages:
+            logger.debug(msg)
 
 
 if __name__ == "__main__":
+    import sys
+
+    logger.remove()
+    logger._logger.add(sys.stdout, level="DEBUG")
     openai = ChatAgent()
     print(openai.post_human("Hello!"))
     openai.debug()
