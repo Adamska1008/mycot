@@ -18,7 +18,7 @@ from logger import ThreadLogger
 logger = ThreadLogger()
 
 
-class ChatAgent:
+class ChatBot:
     """
     ChatBot based on OpenAI API
     """
@@ -100,10 +100,6 @@ class ChatAgent:
 
 
 if __name__ == "__main__":
-    import sys
-
-    logger.remove()
-    logger._logger.add(sys.stdout, level="DEBUG")
-    openai = ChatAgent()
+    openai = ChatBot()
     print(openai.post_human("Hello!"))
     openai.debug()

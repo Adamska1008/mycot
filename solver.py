@@ -3,7 +3,8 @@ Codes related to CoTSolver
 """
 
 from abc import ABC, abstractmethod
-from agent import ChatAgent
+from typing import override
+from agent import ChatBot
 
 COT_AI_PROMPT = (
     "Let's first understand the problem, extract relevant variables and their corresponding numerals,"
@@ -33,9 +34,8 @@ class CoTSolver(ABC):
         NOTICE: The options should not be contained if it's a multiple choices problem.
         """
 
-    @property
     @abstractmethod
-    def agent(self) -> ChatAgent:
+    def send_human_message(self, msg: str) -> ChatBot:
         """
         get the agent
         """
@@ -45,7 +45,7 @@ class CoTSolver(ABC):
         Solve a numerical problem, e.g. return only a number.
         """
         self.solve()
-        return self.agent.post_human(
+        return self.send_human_message(
             "Therefore the answer is?"
             "Output only a real number(e.g., 3.14). Do not use fractional form(like 1/2 or 3/4)."
             "Do not show a equation like 1 + 1 = 2. In this case, output 2 only."
@@ -60,7 +60,7 @@ class CoTSolver(ABC):
         options_lines = []
         for k, v in options.items():
             options_lines.append(f"{k}: {v}")
-        return self.agent.post_human(
+        return self.send_human_message(
             f"Here are {len(options_lines)} options for the answer:\n"
             + "\n".join(options_lines)
             + "Please choose and output one of the upper letter of the options, e.g. A. "
@@ -75,7 +75,7 @@ class CoTSolver(ABC):
             boolean_expression: two str in a tuple, presenting true and false. e.g. ["True", "False"]
         """
         self.solve()
-        return self.agent.post_human(
+        return self.send_human_message(
             "Decide the answer to the problem to be true or false."
             f"If you think it's true, output {boolean_expression[0]},"
             f"else output {boolean_expression[1]}"
@@ -90,11 +90,11 @@ class ZSCoTSolver(CoTSolver):
 
     def __init__(self, problem: str = None, model_name: str = None):
         self._problem = problem
-        self._agent = ChatAgent(model_name=model_name)
+        self._agent = ChatBot(model_name=model_name)
 
-    @property
-    def agent(self):
-        return self._agent
+    @override
+    def send_human_message(self, msg):
+        return self._agent.post_human(msg)
 
     def set_problem(self, problem: str) -> None:
         """
@@ -102,6 +102,7 @@ class ZSCoTSolver(CoTSolver):
         """
         self._problem = problem
 
+    @override
     def solve(self) -> str:
         """
         Solve the problem.
@@ -109,9 +110,9 @@ class ZSCoTSolver(CoTSolver):
         Returns:
             - a number indicates the final answer
         """
-        self.agent.clear_history()
-        self.agent.store_human(self._problem)
-        return self.agent.post_ai("Let's think step by step.")
+        self._agent.clear_history()
+        self._agent.store_human(self._problem)
+        return self._agent.post_ai("Let's think step by step.")
 
 
 class PSCoTSolver(CoTSolver):
@@ -121,11 +122,11 @@ class PSCoTSolver(CoTSolver):
 
     def __init__(self, problem: str = None, model_name: str = None):
         self._problem = problem
-        self._agent = ChatAgent(model_name=model_name)
+        self._agent = ChatBot(model_name=model_name)
 
-    @property
-    def agent(self):
-        return self._agent
+    @override
+    def send_human_message(self, msg):
+        return self._agent.post_human(msg)
 
     def set_problem(self, problem: str):
         """
@@ -140,9 +141,9 @@ class PSCoTSolver(CoTSolver):
         Returns:
             - a number indicates the final answer
         """
-        self.agent.clear_history()
-        self.agent.store_human(self._problem)
-        return self.agent.post_ai(COT_AI_PROMPT)
+        self._agent.clear_history()
+        self._agent.store_human(self._problem)
+        return self._agent.post_ai(COT_AI_PROMPT)
 
 
 class GiveAListSolver(CoTSolver):
@@ -152,7 +153,7 @@ class GiveAListSolver(CoTSolver):
 
     def __init__(self, problem: str = None, model_name: str = None):
         self._problem = problem
-        self._agent = ChatAgent(
+        self._agent = ChatBot(
             system_prompt=(
                 "You are going to solve a problem. "
                 "First, you should extract variables and their corresponding numerals."
@@ -165,9 +166,9 @@ class GiveAListSolver(CoTSolver):
             model_name=model_name,
         )
 
-    @property
-    def agent(self):
-        return self._agent
+    @override
+    def send_human_message(self, msg):
+        return self._agent.post_human(msg)
 
     def set_problem(self, problem: str):
         """
@@ -179,9 +180,9 @@ class GiveAListSolver(CoTSolver):
         """
         Prompt the agent to give a list of steps to solve the problem
         """
-        self.agent.clear_history()
-        self.agent.store_human(self._problem)
-        return self.agent.post_ai(
+        self._agent.clear_history()
+        self._agent.store_human(self._problem)
+        return self._agent.post_ai(
             "Ok, I will think step by step and give you a list of steps to solve the problem.\n"
             "1. "
         )
