@@ -2,15 +2,17 @@
 Doing evaluate stuff
 """
 
+import itertools
+import threading
 from typing import Type, TypeVar
-from loader import load_json, load_jsonl, Problem, MultiChoiceProblem, AnswerType
+from loader import load_json, load_jsonl, Problem, MultiChoiceProblem, AnswerType, GSM8K
 from solver import CoTSolver
 from logger import ThreadLogger
 
 logger = ThreadLogger()
 
 
-T = TypeVar("T", bound=Problem)
+P = TypeVar("P", bound=Problem)
 M = TypeVar("M", bound=MultiChoiceProblem)
 S = TypeVar("S", bound=CoTSolver)
 
@@ -48,7 +50,7 @@ def answer_equal(answer: str, output: str, answer_type: AnswerType) -> bool:
 
 def evaluate_dataset(
     file_path: str,
-    dataset: Type[T],
+    dataset: Type[P],
     solver: Type[S],
     answer_type: AnswerType,
     range_arg: range | None = None,
@@ -98,3 +100,45 @@ def evaluate_dataset(
         logger.info(f"In case {index + 1}, correct {correct_cnt}.")
 
     logger.info(f"{solver.__name__} solver accuracy: {correct_cnt / tot_cnt}")
+
+
+def evaluate_in_threads(
+    solvers: list[Type[S]],
+    datasets: list[Type[P]],
+    range_arg: range | None = None,
+    model: str = "gpt-4o-mini",
+    debug: bool = False,
+):
+    """
+    Evaluate datasets and solvers simultaneously.
+    """
+    group = itertools.product(solvers, datasets)
+    threads = []
+    for solver, dataset in group:
+        log_file = f"./logs/{solver.__name__}_{dataset.__name__}.log"
+        if range_arg is None and dataset is GSM8K:
+            range_arg = range(0, 400)
+        dataset_path = f"./dataset/{dataset.__name__}.{dataset.file_format()}"
+        evaluation_thread = threading.Thread(
+            target=evaluate_dataset,
+            kwargs={
+                "file_path": dataset_path,
+                "dataset": dataset,
+                "solver": solver,
+                "range_arg": range_arg,
+                "answer_type": dataset.answer_type(),
+                "model_name": model,
+            },
+        )
+
+        threads.append(evaluation_thread)
+        evaluation_thread.start()
+        logger.bind(
+            evaluation_thread.ident,
+            log_file,
+            "DEBUG" if debug else "INFO",
+        )
+        print(f"Starting evaluation for {solver} on {dataset}")
+    
+    for thread in threads:
+        thread.join()

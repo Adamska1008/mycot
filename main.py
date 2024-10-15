@@ -2,11 +2,10 @@
 Main entry for the project
 """
 
-import threading
 import argparse
 import itertools
 from typing import Type
-from evaluate import evaluate_dataset
+from evaluate import evaluate_dataset, evaluate_in_threads
 from solver import ZSCoTSolver, PSCoTSolver, GiveAListSolver, CoTSolver
 from loader import AddSub, GSM8K, AQuA, CoinFlip, Problem
 from logger import ThreadLogger
@@ -87,46 +86,50 @@ def main():
         "give_a_list": GiveAListSolver,
     }
 
-    solvers = args.solver
-    datasets = args.dataset
-    group = itertools.product(solvers, datasets)  # cartesian product
-    threads = []
-    range_arg = args.range
+    solvers: list[str] = args.solver
+    datasets: list[str] = args.dataset
+    range_arg: range | None = args.range
     model = args.model if args.model else "gpt-4o-mini"
+    evaluate_in_threads(
+        solvers=map(lambda s: solver_class_map[s], solvers),
+        datasets=map(lambda d: globals()[d], datasets),
+        range_arg=range_arg,
+        model=model,
+        debug=args.debug,
+    )
+    # for solver, dataset in group:
+    #     logger_file = f"./logs/{solver}_{dataset}.log"
 
-    for solver, dataset in group:
-        logger_file = f"./logs/{solver}_{dataset}.log"
+    #     if range_arg is None and dataset == "GSM8K":
+    #         range_arg = range(0, 400)
 
-        if range_arg is None and dataset == "GSM8K":
-            range_arg = range(0, 400)
+    #     solver_cls = solver_class_map[solver]
+    #     dataset_cls: Type[Problem] = globals()[dataset]
+    #     file_path = f"./dataset/{dataset}.{dataset_cls.file_format()}"
 
-        solver_cls = solver_class_map[solver]
-        dataset_cls: Type[Problem] = globals()[dataset]
-        file_path = f"./dataset/{dataset}.{dataset_cls.file_format()}"
+    #     evaluation_thread = threading.Thread(
+    #         target=evaluate_dataset,
+    #         kwargs={
+    #             "file_path": file_path,
+    #             "dataset": dataset_cls,
+    #             "solver": solver_cls,
+    #             "range_arg": range_arg,
+    #             "answer_type": dataset_cls.answer_type(),
+    #             "model_name": model,
+    #         },
+    #     )
 
-        evaluation_thread = threading.Thread(
-            target=evaluate_dataset,
-            kwargs={
-                "file_path": file_path,
-                "dataset": dataset_cls,
-                "solver": solver_cls,
-                "range_arg": range_arg,
-                "answer_type": dataset_cls.answer_type(),
-                "model_name": model,
-            },
-        )
+    #     threads.append(evaluation_thread)
+    #     evaluation_thread.start()
+    #     logger.bind(
+    #         evaluation_thread.ident,
+    #         logger_file,
+    #         "DEBUG" if args.debug else "INFO",
+    #     )
+    #     print(f"Starting evaluation for {solver} on {dataset}")
 
-        threads.append(evaluation_thread)
-        evaluation_thread.start()
-        logger.bind(
-            evaluation_thread.ident,
-            logger_file,
-            "DEBUG" if args.debug else "INFO",
-        )
-        print(f"Starting evaluation for {solver} on {dataset}")
-
-    for thread in threads:
-        thread.join()
+    # for thread in threads:
+    #     thread.join()
 
 
 if __name__ == "__main__":

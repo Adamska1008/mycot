@@ -6,7 +6,7 @@ My implementation of some Chain-of-Thought solver. Currently implement zero-shot
 
 `main.py` is the script to run. Run `python main.py -h` to see available options:
 
-```
+```plain
 usage: main.py [-h] --solver {zero_shot,plan_and_solve,give_a_list} [{zero_shot,plan_and_solve,give_a_list} ...] --dataset {AddSub,GSM8K,AQuA} [{AddSub,GSM8K,AQuA} ...] [--debug] [--range RANGE]
 
 Use this script to quickly test the effect of a Solver solving a problem in the dataset
@@ -21,7 +21,7 @@ options:
   --range RANGE         Range of the problems to be tested
 ```
 
-For example, run `python main.py --solver zero_shot --dataset AddSub` will execute the zero-shot solver(using prompt "let's think step by step") on the AddSub dataset. 
+For example, run `python main.py --solver zero_shot --dataset AddSub` will execute the zero-shot solver(using prompt "let's think step by step") on the AddSub dataset.
 
 ### Run Multi-Tests at the same time
 
@@ -33,7 +33,7 @@ python main.py --solver zero_shot plan_and_solve --dataset AddSub AQuA
 
 will initiate four threads, which are
 
-```
+```plain
 (zero_shot, AddSub)
 (plan_and_solve, AddSub)
 (zero_shot, AQuA)
@@ -48,7 +48,7 @@ The `--range` argument accepts a range argument in format of `start,end` (`end` 
 python main.py --solver zero_shot --dataset AddSub --range 2,3 # or --range 2
 ```
 
-will test the problem with index `2` in AddSub dataset. 
+will test the problem with index `2` in AddSub dataset.
 
 ### Extensibility
 
@@ -114,6 +114,7 @@ class AQuA(MultiChoiceProblem):
 ```
 
 #### Adding a Solver
+
 Create a new class in `solver.py`. It should implement the `CoTSolver` class. For example:
 
 ```python
